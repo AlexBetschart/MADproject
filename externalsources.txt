@@ -7,3 +7,4 @@
 
 style conventions:
 https://google.github.io/styleguide/htmlcssguide.html#ID_and_Class_Naming
+camelCase for ids. snake_case for classes.
