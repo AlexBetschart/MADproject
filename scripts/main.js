@@ -18,6 +18,7 @@ function randomNumber(n) {
  * Author: Travis Burke
  */
 function drag(ev) {
+    console.log("drag:" + ev.target.id);
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
@@ -31,6 +32,7 @@ function drag(ev) {
  * Author: Travis Burke 
  */
 function allowDrop(ev) {
+    console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
 }
 
@@ -43,8 +45,22 @@ function allowDrop(ev) {
  * Author: Travis Burke 
  */
 function drop(ev) {
+    // may need to be edited for 1 dropable.
+    // contains the id of the new location
+    let newLocId = ev.target.id.charAt(1);
+    console.log("drop:" + newLocId);
+
     ev.preventDefault();
+
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+
+    if (data == newLocId) {
+        //ned to make it display button for good job and (star images)
+        console.log("kelu'lk tela'tekn (Good Job)");
+    } else {
+        //need to make it display button for try again and (sunflower images)
+        console.log("tknu'kwalsi ap (Try Again)");
+    }
 }
