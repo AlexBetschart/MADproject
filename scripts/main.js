@@ -41,6 +41,9 @@ function allowDrop(ev) {
    new position; retrieve the id of the dropped element using the key "text";
    and to set the new position of the dropped element; respectively. 
  * 
+ * This function also compares the id of the dragged element with the id of
+   where the element is dropped.
+ *  
  * @param ev The event being referenced.
  * Author: Travis Burke 
  */
