@@ -8,6 +8,13 @@ function randomNumber(n) {
     return Math.floor(Math.random() * n);
 }
 
+//generates random number 1 - 9
+window.onload = function randomNumber() {
+    let x = Math.floor(Math.random() * 9) + 1;
+    console.log("The correct answer is : " + x);
+    document.getElementById("correctAnswer").innerHTML = x;
+};
+
 /**
  * The purpose of this function is to store the id of the element being
    dragged in a common storage area, under the key "text".
