@@ -5,7 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
-    <!-- Set tab in window -->
+    <!-- Sets what appears in the window tab -->
     <title>Project 2</title>
     <!-- For the browser to display the page correctly the character 
          encoding must be made known to the browser. Each character
@@ -25,10 +25,18 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+     <!-- The target element with 2 possible event types: drop and dragover -->
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  <div>
+      <!-- The dragged element with 1 event type: dragstart
+           Note the draggable attribute must be set to true
+      -->
+      <img id="1" src="resources/images/bear.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
+  </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-4" >
-          <input  type="image" src="resources/images/ltu.jpg" width="100" height="100">
+          <input  type="image" draggable="false" src="resources/images/ltu.jpg" width="100" height="100">
          </div>
         <div class="col-lg-4" id="titleRow"></div>
         <div class="col-lg-4" ></div>
