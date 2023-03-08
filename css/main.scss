@@ -12,9 +12,12 @@ body {
 /* class based styles **************************************/
 
 /* 
-Genaric center class
-*/
+The purpose ofthis class is to centers the bear in the left 
+hand portion of the screen.
 
-.center{
+Author: Travis Burke.
+*/
+.centerBear{
    margin: auto;
+   width: 20%;
 }
