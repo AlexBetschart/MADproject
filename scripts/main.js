@@ -1,4 +1,32 @@
 /**
+ * adds all necessary html to begin the game
+ */
+window.onload = function startGame() {
+
+}
+
+/**
+ * changes contents of html file if answer is correct
+ */
+function onSuccess() {
+
+}
+
+/**
+ * changes contents of html file if answer is incorrect
+ */
+function onFailure() {
+
+}
+
+/**
+ * resets the game to its original state
+ */
+function resetGame() {
+
+}
+
+/**
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 0 <= x < n
