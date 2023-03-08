@@ -1,3 +1,16 @@
+import { readdirSync } from "fs";
+//Trying to load images into an array
+//The same process should work for images, words, and audio
+//Currently not working, 
+//@author: Alex Betschart
+var imageArray = new Array();
+readdirSync("/resources/images/").forEach(file => {
+  console.log(file)
+})
+
+
+
+
 /**
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
