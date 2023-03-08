@@ -40,11 +40,17 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
+ * @param imageNum //needs comment
  * Author: Travis Burke 
  */
-function allowDrop(ev) {
+function allowDrop(ev, imageNum) {
     console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
+
+    //this is also going to be correctAnswer
+    //needs to be shown after its done
+    console.log("imageNum=" + imageNum);
+    $("#image1").hide();
 }
 
 /**

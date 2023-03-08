@@ -1,14 +1,29 @@
 /* HTML tag based styles ***********************************/
 body {
-  background-color: rgb(255, 255, 115);
+  background-color: rgb(240, 231, 140);
   margin: auto;
+}
+
+img {
+  /* Note the width is expanded so the images display properly
+      within the grid */
+  width: 115%;
+  height: 100%;
 }
 
 /* id based styles *****************************************/
 /* class based styles **************************************/
-/* 
-Genaric center class
-*/
 .center {
+  margin: auto;
+}
+
+/* 
+The purpose ofthis class is to centers the bear in the left 
+hand portion of the screen.
+
+Author: Travis Burke.
+*/
+.centerBear {
+  width: 20%;
   margin: auto;
 }/*# sourceMappingURL=main.css.map */

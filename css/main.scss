@@ -5,11 +5,21 @@ body {
    background-color: rgb(240, 231, 140);
    margin:auto;
 }
-
+img{
+/* Note the width is expanded so the images display properly
+    within the grid */
+    //mayneed tobe adjusted - Travis
+    width:115%;
+    height: 100%;
+}
 /* id based styles *****************************************/
 
 
 /* class based styles **************************************/
+
+.center{
+   margin: auto;
+}
 
 /* 
 The purpose ofthis class is to centers the bear in the left 
@@ -18,6 +28,7 @@ hand portion of the screen.
 Author: Travis Burke.
 */
 .centerBear{
-   margin: auto;
    width: 20%;
+   margin: auto;
+   
 }
