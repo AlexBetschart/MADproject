@@ -8,7 +8,11 @@ function randomNumber(n) {
     return Math.floor(Math.random() * n);
 }
 
-//generates random number 1 - 9
+//generates random number 1 - 9.
+//Alex I was thinking of integrating this withyou code with the random number generator (above)
+//and we could assign the return value to correct answer and that would help us choose which
+//picture and sound file isthe right one. A new number would be generated after each new game
+// begins.
 window.onload = function randomNumber() {
     let x = Math.floor(Math.random() * 9) + 1;
     console.log("The correct answer is : " + x);
