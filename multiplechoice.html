@@ -1,23 +1,54 @@
 <!DOCTYPE html>
+<!-- Not sure what this is - Travis -->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
   <head>
+    <!-- Sets what appears in the window tab -->
+    <title>Project 2</title>
+    <!-- For the browser to display the page correctly the character 
+         encoding must be made known to the browser. Each character
+         has a unique value or code as mapped in UTF-8 -->
     <meta charset="utf-8">
+    <!-- Not sure what this does -Travis -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
+    <!-- Not sure what this does -Travis -->
+    <meta name="description" content="Project2">
+    <!-- Sets width to the width of the device at scale 1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./scripts/jquery-3.6.0.js"></script>
+    <!-- Make Bootstrap styles accessible to this file -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="">-->
+    <!-- Make main.css accessible to this file -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Make jquery accessable to this file -->
+    <script src="./scripts/jquery-3.6.0.js"></script>
+    <!-- make the JavaScript file available to this file -->
+    <script src="scripts/main.js"></script>
   </head>
   <body>
-    <div class="container">
+
+    <!-- The target element with 2 possible event types: drop and dragover -->
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  <div>
+      <!-- The dragged element with 1 event type: dragstart
+           Note the draggable attribute must be set to true
+      -->
+      <img id="correctAnswer" src="resources/images/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" 
+      >
+  </div>
+
+
+
+
+<!-- for each grid section makesure they include ondrop="drop(event)" ondragover="allowDrop(event, num) example (below)-->
+    <!-- Bootstrap Grid System -->
+  <div class="container" class="center">
       <div class="row">
-        <div class="col-lg-4" ></div>
+        <div class="col-lg-4" ondrop="drop(event)" ondragover="allowDrop(event,1)">
+          <img id="image1" draggable="false" src="resources/images/ltu.jpg" >
+         </div>
         <div class="col-lg-4" id="titleRow"></div>
         <div class="col-lg-4" ></div>
       </div>  
