@@ -70,8 +70,9 @@ function drop(ev) {
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
+    //this needs to be changed to display the propper image.
     if (data == newLocId) {
-        //ned to make it display button for good job and (star images)
+        //need to make it display button for good job and (star images)
         console.log("kelu'lk tela'tekn (Good Job)");
     } else {
         //need to make it display button for try again and (sunflower images)
