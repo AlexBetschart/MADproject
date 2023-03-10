@@ -1,13 +1,23 @@
-import { readdirSync } from "fs";
-//Trying to load images into an array
-//The same process should work for images, words, and audio
-//Currently not working, 
-//@author: Alex Betschart
-var imageArray = new Array();
-readdirSync("/resources/images/").forEach(file => {
-  console.log(file)
-})
 
+const images =["..resources/images/guessImages/aqq.jpg","..resources/images/guessImages/eliey.jpg","..resources/images/guessImages/kesalk.jpg",
+"..resources/images/guessImages/kil.jpg", "..resources/images/guessImages/ltu.jpg","..resources/images/guessImages/mijisi.jpg",
+"..resources/images/guessImages/nin.jpg","..resources/images/guessImages/teluisi.jpg","..resources/images/guessImages/wiktm.jpg"]
+
+window.onload = function loadImages() {
+  for (let i = 0; i < 9; i++) {
+    let id ="#topMid";
+    if (i < 3) {
+      id = "#topMid";
+    }
+    else if (i < 6) {
+      id = "#midMid";
+    }
+    else if (i < 9) {
+      id = "#bottomMid";
+    }
+    $(id).append("<img id='"+i + "' src='" + images[i] + "' />");
+  }
+}
 
 /**
  * adds all necessary html to begin the game
@@ -52,11 +62,11 @@ function randomNumber(n) {
 //and we could assign the return value to correct answer and that would help us choose which
 //picture and sound file isthe right one. A new number would be generated after each new game
 // begins.
-window.onload = function getCorrect() {
-    let x = randomNumber(9) + 1; 
-    console.log("The correct answer is : " + x);
-    document.getElementById("correctAnswer").innerHTML = x;
-};
+//window.onload = function getCorrect() {
+ //   let x = randomNumber(9) + 1; 
+ //   console.log("The correct answer is : " + x);
+ //   document.getElementById("correctAnswer").innerHTML = x;
+//};
 
 /**
  * The purpose of this function is to store the id of the element being
