@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+
+const images =["../resources/images/guessImages/aqq.jpg","../resources/images/guessImages/eliey.jpg","../resources/images/guessImages/kesalk.jpg",
+"../resources/images/guessImages/kil.jpg", "../resources/images/guessImages/ltu.jpg","../resources/images/guessImages/mijisi.jpg",
+"../resources/images/guessImages/nin.jpg","../resources/images/guessImages/teluisi.jpg","../resources/images/guessImages/wiktm.jpg"]
+
+$("#topMid").append("<img id='1' src='..resources/images/guessImages/aqq.jpg'/>")
+function loadImages() {
+  for (var i = 0; i < images.length; i++) {
+    var id ="#topMid";
+    if (i < 3) {
+      var id = "topMid";
+      $(id).append("<img id='"+ i + "' src='" + images[i] + "' />")
+    }
+    else if (i < 6) {
+      var id = "midMid";
+      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
+    }
+    else if (i < 9) {
+      var id = "bottomMid";
+      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
+    }
+    console.log("hello" + i + id);
+  }
+}
+loadImages();
+>>>>>>> 865f09d93560b460f7635218298f1d60f7b48a5d
 
 /**
  * adds all necessary html to begin the game
@@ -49,11 +77,11 @@ function randomNumber(n) {
 //and we could assign the return value to correct answer and that would help us choose which
 //picture and sound file isthe right one. A new number would be generated after each new game
 // begins.
-window.onload = function getCorrect() {
-    let x = randomNumber(9) + 1; 
-    console.log("The correct answer is : " + x);
-    document.getElementById("correctAnswer").innerHTML = x;
-};
+//window.onload = function getCorrect() {
+ //   let x = randomNumber(9) + 1; 
+ //   console.log("The correct answer is : " + x);
+ //   document.getElementById("correctAnswer").innerHTML = x;
+//};
 
 /**
  * The purpose of this function is to store the id of the element being
