@@ -3,7 +3,7 @@ const images =["..resources/images/guessImages/aqq.jpg","..resources/images/gues
 "..resources/images/guessImages/kil.jpg", "..resources/images/guessImages/ltu.jpg","..resources/images/guessImages/mijisi.jpg",
 "..resources/images/guessImages/nin.jpg","..resources/images/guessImages/teluisi.jpg","..resources/images/guessImages/wiktm.jpg"]
 
-window.onload = function loadImages() {
+function loadImages() {
   for (let i = 0; i < 9; i++) {
     let id ="#topMid";
     if (i < 3) {
@@ -15,9 +15,10 @@ window.onload = function loadImages() {
     else if (i < 9) {
       id = "#bottomMid";
     }
-    $(id).append("<img id='"+i + "' src='" + images[i] + "' />");
+    document.getElementById(id).innerHTML("<img id='"+i + "' src='" + images[i] + "' />");
   }
 }
+loadImages();
 
 /**
  * adds all necessary html to begin the game
