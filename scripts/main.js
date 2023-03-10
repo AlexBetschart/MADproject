@@ -9,8 +9,6 @@ readdirSync("/resources/images/").forEach(file => {
 })
 
 
-
-
 /**
  * adds all necessary html to begin the game
  */
@@ -54,8 +52,8 @@ function randomNumber(n) {
 //and we could assign the return value to correct answer and that would help us choose which
 //picture and sound file isthe right one. A new number would be generated after each new game
 // begins.
-window.onload = function randomNumber() {
-    let x = Math.floor(Math.random() * 9) + 1;
+window.onload = function getCorrect() {
+    let x = randomNumber(9) + 1; 
     console.log("The correct answer is : " + x);
     document.getElementById("correctAnswer").innerHTML = x;
 };
