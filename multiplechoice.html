@@ -32,7 +32,7 @@
       <!-- The dragged element with 1 event type: dragstart
            Note the draggable attribute must be set to true
       -->
-      <img id="correctAnswer" src="resources/images/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" 
+      <img id="correctAnswer" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" 
       >
   </div>
 
@@ -44,11 +44,10 @@
     <!-- Bootstrap Grid System -->
   <div class="container" class="center">
       <div class="row">
-        <div class="col-lg-4" ondrop="drop(event)" ondragover="allowDrop(event,1)">
-          <img id="image1" draggable="false" src="resources/images/ltu.jpg" >
-         </div>
         <div class="col-lg-4" ></div>
-        <div class="col-lg-4" id="titleRow"></div>
+        <div class="col-lg-4" id="titleRow">
+          <input type="image" src="resources/images/resourceImages/vol.jpg" onclick="playAudio()">
+        </div>
         <div class="col-lg-4" ></div>
       </div>
       <!--3 images go in the xMid ids. 3 per tag-->

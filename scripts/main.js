@@ -1,18 +1,8 @@
-import { readdirSync } from "fs";
-//Trying to load images into an array
-//The same process should work for images, words, and audio
-//Currently not working, 
-//@author: Alex Betschart
-var imageArray = new Array();
-readdirSync("/resources/images/").forEach(file => {
-  console.log(file)
-})
-
 
 /**
  * adds all necessary html to begin the game
  */
-window.onload = function startGame() {
+function startGame() {
 
 }
 
@@ -38,6 +28,13 @@ function resetGame() {
 }
 
 /**
+ * plays the audio of the current correct answer
+ */
+function playAudio() {
+
+}
+
+ /**
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 0 <= x < n
