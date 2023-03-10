@@ -45,6 +45,8 @@ function onFailure() {
  * resets the game to its original state
  */
 function resetGame() {
+  //essentially just refreshes the page could be onClick...
+  location.reload();
 
 }
 
