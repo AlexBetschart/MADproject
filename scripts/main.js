@@ -9,7 +9,7 @@ function loadImages() {
     var id ="#topMid";
     if (i < 3) {
       var id = "topMid";
-      $(id).append("<img id='"+i + "' src='" + images[i] + "' />")
+      $(id).append("<img id='"+ i + "' src='" + images[i] + "' />")
     }
     else if (i < 6) {
       var id = "midMid";
@@ -49,8 +49,6 @@ function onFailure() {
  * resets the game to its original state
  */
 function resetGame() {
-  //essentially just refreshes the page could be onClick...
-  location.reload();
 
 }
 
