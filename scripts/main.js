@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 const images =["../resources/images/guessImages/aqq.jpg","../resources/images/guessImages/eliey.jpg","../resources/images/guessImages/kesalk.jpg",
 "../resources/images/guessImages/kil.jpg", "../resources/images/guessImages/ltu.jpg","../resources/images/guessImages/mijisi.jpg",
@@ -25,7 +23,6 @@ function loadImages() {
   }
 }
 loadImages();
->>>>>>> 865f09d93560b460f7635218298f1d60f7b48a5d
 
 /**
  * adds all necessary html to begin the game
