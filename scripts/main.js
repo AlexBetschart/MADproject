@@ -13,15 +13,15 @@ const images = [
 $("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
-        var id = "#topMid";
+        $("#topMid");
         if (i < 3) {
             var id = "topMid";
             $(id).append("<img id='" + i + "' src='" + images[i] + "' />");
         } else if (i < 6) {
-            var id = "midMid";
+            $("midMid");
             $(id).prepend("<img id='" + i + "' src='" + images[i] + "' />");
         } else if (i < 9) {
-            var id = "bottomMid";
+            $("bottomMid");
             $(id).prepend("<img id='" + i + "' src='" + images[i] + "' />");
         }
         console.log("hello" + i + id);
