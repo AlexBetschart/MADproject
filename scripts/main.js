@@ -1,65 +1,62 @@
+const images = [
+    "resources/images/guessImages/aqq.jpg",
+    "resources/images/guessImages/eliey.jpg",
+    "resources/images/guessImages/kesalk.jpg",
+    "resources/images/guessImages/kil.jpg",
+    "resources/images/guessImages/ltu.jpg",
+    "resources/images/guessImages/mijisi.jpg",
+    "resources/images/guessImages/nin.jpg",
+    "resources/images/guessImages/teluisi.jpg",
+    "resources/images/guessImages/wiktm.jpg",
+];
 
-const images =["../resources/images/guessImages/aqq.jpg","../resources/images/guessImages/eliey.jpg","../resources/images/guessImages/kesalk.jpg",
-"../resources/images/guessImages/kil.jpg", "../resources/images/guessImages/ltu.jpg","../resources/images/guessImages/mijisi.jpg",
-"../resources/images/guessImages/nin.jpg","../resources/images/guessImages/teluisi.jpg","../resources/images/guessImages/wiktm.jpg"]
-
-$("#topMid").append("<img id='1' src='..resources/images/guessImages/aqq.jpg'/>")
+$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 function loadImages() {
-  for (var i = 0; i < images.length; i++) {
-    var id ="#topMid";
-    if (i < 3) {
-      var id = "topMid";
-      $(id).append("<img id='"+ i + "' src='" + images[i] + "' />")
+    for (var i = 0; i < images.length; i++) {
+        var id = "#topMid";
+        if (i < 3) {
+            var id = "topMid";
+            $(id).append("<img id='" + i + "' src='" + images[i] + "' />");
+        } else if (i < 6) {
+            var id = "midMid";
+            $(id).prepend("<img id='" + i + "' src='" + images[i] + "' />");
+        } else if (i < 9) {
+            var id = "bottomMid";
+            $(id).prepend("<img id='" + i + "' src='" + images[i] + "' />");
+        }
+        console.log("hello" + i + id);
     }
-    else if (i < 6) {
-      var id = "midMid";
-      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
-    }
-    else if (i < 9) {
-      var id = "bottomMid";
-      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
-    }
-    console.log("hello" + i + id);
-  }
 }
-loadImages();
+//loadImages();
 
 /**
  * adds all necessary html to begin the game
  */
-function startGame() {
-
-}
+function startGame() {}
 
 /**
  * changes contents of html file if answer is correct
  */
-function onSuccess() {
-
-}
+function onSuccess() {}
 
 /**
  * changes contents of html file if answer is incorrect
  */
-function onFailure() {
-
-}
+function onFailure() {}
 
 /**
  * resets the game to its original state
  */
 function resetGame() {
-
+    location.reload();
 }
 
 /**
  * plays the audio of the current correct answer
  */
-function playAudio() {
+function playAudio() {}
 
-}
-
- /**
+/**
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 0 <= x < n
@@ -75,9 +72,9 @@ function randomNumber(n) {
 //picture and sound file isthe right one. A new number would be generated after each new game
 // begins.
 //window.onload = function getCorrect() {
- //   let x = randomNumber(9) + 1; 
- //   console.log("The correct answer is : " + x);
- //   document.getElementById("correctAnswer").innerHTML = x;
+//   let x = randomNumber(9) + 1;
+//   console.log("The correct answer is : " + x);
+//   document.getElementById("correctAnswer").innerHTML = x;
 //};
 
 /**
@@ -111,7 +108,7 @@ function allowDrop(ev, imageNum) {
     //this is also going to be correctAnswer
     //needs to be shown after its done
     console.log("imageNum=" + imageNum);
-    $("#image1").hide();
+    $("#1").hide();
 }
 
 /**
@@ -132,6 +129,7 @@ function drop(ev) {
     console.log("drop:" + newLocId);
 
     ev.preventDefault();
+    $("#correctAnswer").hide();
 
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");

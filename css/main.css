@@ -4,15 +4,13 @@ body {
   margin: auto;
 }
 
-img {
-  /* Note the width is expanded so the images display properly
-      within the grid */
-  width: 115%;
-  height: 100%;
-}
-
 /* id based styles *****************************************/
 /* class based styles **************************************/
+/* 
+The purpose of this class is to centers objects to the screen.
+
+Author: Travis Burke.
+*/
 .center {
   margin: auto;
 }
@@ -26,4 +24,30 @@ Author: Travis Burke.
 .centerBear {
   width: 20%;
   margin: auto;
+}
+
+/* 
+The purpose of this class is to set the correct sizing of the gameplay images in the grid
+and the bear image.
+
+Author: Travis Burke.
+*/
+gridImgs {
+  /* Note the width is expanded so the images display properly
+      within the grid */
+  width: 115%;
+  height: 100%;
+  margin-left: 50%;
+}
+
+/* 
+The purpose of this class is to set the correct sizing of the text images.
+
+Author: Travis Burke.
+*/
+textImgs {
+  /* Note the width is expanded so the images display properly
+      within the grid */
+  width: 115%;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
