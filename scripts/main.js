@@ -11,6 +11,7 @@ const images = [
 ];
 
 $("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
+
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
         if (i < 3) {
