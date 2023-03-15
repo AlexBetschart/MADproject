@@ -27,22 +27,20 @@
   <body>
 
     <!-- The target element with 2 possible event types: drop and dragover -->
-  <div ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  <div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
   <div>
       <!-- The dragged element with 1 event type: dragstart
            Note the draggable attribute must be set to true
       -->
-      <img id="correctAnswer" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" 
+      <img id="correctAnswer" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" ondrop="event
+      ,1"
       >
   </div>
 
 
 
-
-<!-- for each grid section makesure they include ondrop="drop(event)" ondragover="allowDrop(event, num) example (below)-->
-
     <!-- Bootstrap Grid System -->
-  <div class="container" class="center">
+  <div class="container" class="center" onload="loadImages()"  >
       <div class="row">
         <div class="col-lg-4" ></div>
         <div class="col-lg-4" id="titleRow">
@@ -55,6 +53,7 @@
           star.jpg would go in the xLeft ids
           author: Alex Betschart    
       -->
+      <img id='1' src='resources/images/guessImages/aqq.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,1)" draggable="false"/>
       <div class="row">
         <div class="col-lg-4" id="topLeft"></div>
         <div class="col-lg-4" id="topMid">
