@@ -9,34 +9,39 @@ body {
 /* 
 The purpose of this class is to centers objects to the screen.
 
-Author: Travis Burke.
+Author: Travis Burke  here.
 */
 .center {
-  margin: auto;
+  margin-left: 60%;
+  margin-top: 5%;
 }
 
 /* 
 The purpose ofthis class is to centers the bear in the left 
 hand portion of the screen.
 
-Author: Travis Burke.
+Author: Travis Burke here.
 */
 .centerBear {
-  width: 20%;
-  margin: auto;
+  width: 8%;
+  margin-left: 30%;
+  margin-top: 5%;
 }
 
 /* 
 The purpose of this class is to set the correct sizing of the gameplay images in the grid
 and the bear image.
 
-Author: Travis Burke.
+Author: Travis Burke here.
 */
 .cent {
   /* Note the width is expanded so the images display properly
       within the grid */
 
-  margin: left 50%;
+      display: block;
+      margin-left:40%;
+      margin-right: auto;
+      width: 50%;
 }
 
 /* 

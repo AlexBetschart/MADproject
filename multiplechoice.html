@@ -26,7 +26,30 @@
   </head>
   <body>
 
-    <!-- The target element with 2 possible event types: drop and dragover -->
+ 
+
+
+   
+      <!--3 images go in the xMid ids. 3 per tag-->
+      <!--Going from the sample screen. Sunflowers woul go in the xRight ids
+          star.jpg would go in the xLeft ids
+          author: Alex Betschart  here   
+      -->
+      <div class="cent">
+      <img id='1' src='resources/images/guessImages/aqq.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,1)" draggable="false"/>
+      <img id='2' src='resources/images/guessImages/eliey.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,2)" draggable="false"/>
+      <img id='3' src='resources/images/guessImages/kesalk.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,3)" draggable="false"/>
+      <br>
+      <img id='4' src='resources/images/guessImages/kil.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,4)" draggable="false"/>
+      <img id='5' src='resources/images/guessImages/ltu.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,5)" draggable="false"/>
+      <img id='6' src='resources/images/guessImages/mijisi.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,6)" draggable="false"/>
+      <br>
+      <img id='7' src='resources/images/guessImages/nin.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,7)" draggable="false"/>
+      <img id='8' src='resources/images/guessImages/teluisi.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,8)" draggable="false"/>
+      <img id='9' src='resources/images/guessImages/wiktm.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,9)" draggable="false"/>
+      </div>
+
+         <!-- The target element with 2 possible event types: drop and dragover  here-->
   <div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
   <div>
       <!-- The dragged element with 1 event type: dragstart
@@ -36,25 +59,16 @@
       ,1"
       >
   </div>
-
-
-
-    <!-- Bootstrap Grid System -->
-  <div class="container" class="center" onload="loadImages()"  >
-      <div class="row">
-        <div class="col-lg-4" ></div>
-        <div class="col-lg-4" id="titleRow">
-          <input type="image" src="resources/images/resourceImages/vol.jpg" onclick="playAudio()">
-        </div>
-        <div class="col-lg-4" ></div>
+   <!-- Bootstrap Grid System -->
+   <div class="container" class="center" onload="loadImages()"  >
+    <div class="row">
+      <div class="col-lg-4" ></div>
+      <div class="col-lg-4" id="titleRow">
+        <input type="image" src="resources/images/resourceImages/vol.jpg" onclick="playAudio()">
       </div>
-      <!--3 images go in the xMid ids. 3 per tag-->
-      <!--Going from the sample screen. Sunflowers woul go in the xRight ids
-          star.jpg would go in the xLeft ids
-          author: Alex Betschart    
-      -->
-      <img id='1' src='resources/images/guessImages/aqq.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,1)" draggable="false"/>
-      <div class="cent">      
+      <div class="col-lg-4" ></div>
+    </div>
+
       <div class="row">
         <div class="col-lg-4" id="topLeft" ></div>
         <div class="col-lg-4" id="topMid"></div>
@@ -70,7 +84,7 @@
         <div class="col-lg-4" id="bottomMid"></div>
         <div class="col-lg-4" id="bottomRight"></div>
       </div>
-    </div>
+    
   </div>
   </body>
 </html>
