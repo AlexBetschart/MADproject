@@ -1,29 +1,3 @@
-
-const images =["../resources/images/guessImages/aqq.jpg","../resources/images/guessImages/eliey.jpg","../resources/images/guessImages/kesalk.jpg",
-"../resources/images/guessImages/kil.jpg", "../resources/images/guessImages/ltu.jpg","../resources/images/guessImages/mijisi.jpg",
-"../resources/images/guessImages/nin.jpg","../resources/images/guessImages/teluisi.jpg","../resources/images/guessImages/wiktm.jpg"]
-
-$("#topMid").append("<img id='1' src='..resources/images/guessImages/aqq.jpg'/>")
-function loadImages() {
-  for (var i = 0; i < images.length; i++) {
-    var id ="#topMid";
-    if (i < 3) {
-      var id = "topMid";
-      $(id).append("<img id='"+ i + "' src='" + images[i] + "' />")
-    }
-    else if (i < 6) {
-      var id = "midMid";
-      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
-    }
-    else if (i < 9) {
-      var id = "bottomMid";
-      $(id).prepend("<img id='"+i + "' src='" + images[i] + "' />")
-    }
-    console.log("hello" + i + id);
-  }
-}
-loadImages();
-
 /**
  * adds all necessary html to begin the game
  */
