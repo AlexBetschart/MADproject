@@ -18,6 +18,16 @@ const images = [
     "resources/audios/nin.wav",
     "resources/audios/teluisi.wav",
     "resources/audios/wiktm.wav",
+], wordImages = [
+    "resources/images/words/aqqText.jpg",
+    "resources/images/words/elieyText.jpg",
+    "resources/images/words/kesalkText.jpg",
+    "resources/images/words/kilText.jpg",
+    "resources/images/words/ltuText.jpg",
+    "resources/images/words/mijisiText.jpg",
+    "resources/images/words/ninText.jpg",
+    "resources/images/words/teluisiText.jpg",
+    "resources/images/words/wiktmText.jpg",
 ];
 
 let CurrCorrect;
