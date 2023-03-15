@@ -8,7 +8,19 @@ const images = [
     "resources/images/guessImages/nin.jpg",
     "resources/images/guessImages/teluisi.jpg",
     "resources/images/guessImages/wiktm.jpg",
+], audios = [ 
+    "resources/audios/aqq.wav",
+    "resources/audios/eliey.wav",
+    "resources/audios/kesalk.wav",
+    "resources/audios/kil.wav",
+    "resources/audios/ltu.wav",
+    "resources/audios/mijisi.wav",
+    "resources/audios/nin.wav",
+    "resources/audios/teluisi.wav",
+    "resources/audios/wiktm.wav",
 ];
+
+let CurrCorrect;
 
 $("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
@@ -35,8 +47,10 @@ function loadImages() {
 /**
  * adds all necessary html to begin the game
  */
-function startGame() {}
-
+function startGame() {
+  CurrCorrect = randomNumber(9);
+}
+startGame();
 /**
  * changes contents of html file if answer is correct
  */
@@ -56,8 +70,13 @@ function resetGame() {
 
 /**
  * plays the audio of the current correct answer
+ * 
+ * Author: Ethan Cooke
  */
-function playAudio() {}
+function playAudio() {
+  let audio = new Audio(audios[CurrCorrect]);
+  audio.play();
+}
 
 /**
  * Generates a random number between 0 and n
