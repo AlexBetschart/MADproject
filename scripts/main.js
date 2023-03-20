@@ -1,38 +1,49 @@
 const images = [
-    "resources/images/guessImages/aqq.jpg",
-    "resources/images/guessImages/eliey.jpg",
-    "resources/images/guessImages/kesalk.jpg",
-    "resources/images/guessImages/kil.jpg",
-    "resources/images/guessImages/ltu.jpg",
-    "resources/images/guessImages/mijisi.jpg",
-    "resources/images/guessImages/nin.jpg",
-    "resources/images/guessImages/teluisi.jpg",
-    "resources/images/guessImages/wiktm.jpg",
-], audios = [ 
-    "resources/audios/aqq.wav",
-    "resources/audios/eliey.wav",
-    "resources/audios/kesalk.wav",
-    "resources/audios/kil.wav",
-    "resources/audios/ltu.wav",
-    "resources/audios/mijisi.wav",
-    "resources/audios/nin.wav",
-    "resources/audios/teluisi.wav",
-    "resources/audios/wiktm.wav",
-], wordImages = [
-    "resources/images/words/aqqText.jpg",
-    "resources/images/words/elieyText.jpg",
-    "resources/images/words/kesalkText.jpg",
-    "resources/images/words/kilText.jpg",
-    "resources/images/words/ltuText.jpg",
-    "resources/images/words/mijisiText.jpg",
-    "resources/images/words/ninText.jpg",
-    "resources/images/words/teluisiText.jpg",
-    "resources/images/words/wiktmText.jpg",
-];
-
+        "resources/images/guessImages/aqq.jpg",
+        "resources/images/guessImages/eliey.jpg",
+        "resources/images/guessImages/kesalk.jpg",
+        "resources/images/guessImages/kil.jpg",
+        "resources/images/guessImages/ltu.jpg",
+        "resources/images/guessImages/mijisi.jpg",
+        "resources/images/guessImages/nin.jpg",
+        "resources/images/guessImages/teluisi.jpg",
+        "resources/images/guessImages/wiktm.jpg",
+    ],
+    audios = [
+        "resources/audios/aqq.wav",
+        "resources/audios/eliey.wav",
+        "resources/audios/kesalk.wav",
+        "resources/audios/kil.wav",
+        "resources/audios/ltu.wav",
+        "resources/audios/mijisi.wav",
+        "resources/audios/nin.wav",
+        "resources/audios/teluisi.wav",
+        "resources/audios/wiktm.wav",
+    ],
+    wordImages = [
+        "resources/images/words/aqqText.jpg",
+        "resources/images/words/elieyText.jpg",
+        "resources/images/words/kesalkText.jpg",
+        "resources/images/words/kilText.jpg",
+        "resources/images/words/ltuText.jpg",
+        "resources/images/words/mijisiText.jpg",
+        "resources/images/words/ninText.jpg",
+        "resources/images/words/teluisiText.jpg",
+        "resources/images/words/wiktmText.jpg",
+    ],
+    imageIDS = [
+        document.getElementById("1"),
+        document.getElementById("2"),
+        document.getElementById("3"),
+        document.getElementById("4"),
+        document.getElementById("5"),
+        document.getElementById("6"),
+        document.getElementById("7"),
+        document.getElementById("8"),
+        document.getElementById("9"),
+    ];
 let CurrCorrect;
-
-$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
+//$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
@@ -54,14 +65,18 @@ function loadImages() {
 }
 //loadImages();
 
-/**
- * adds all necessary html to begin the game
- */
-function startGame() {
-  CurrCorrect = randomNumber(9);
-}
-startGame();
+window.onload = function loadGame() {
+    CurrCorrect = randomNumber(9);
 
+    //find the correct image
+    for (var x = imageIDS[0]; x < imageIDS.length(); x++) {
+        let correctImage = imageIDS[x];
+        if (correctImage == CurrCorrect) {
+            imageNum = correctImage;
+        }
+    }
+};
+//startGame();
 
 function loadWord() {
     let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + "\">";
@@ -89,12 +104,12 @@ function resetGame() {
 
 /**
  * plays the audio of the current correct answer
- * 
+ *
  * Author: Ethan Cooke
  */
 function playAudio() {
-  let audio = new Audio(audios[CurrCorrect]);
-  audio.play();
+    let audio = new Audio(audios[CurrCorrect]);
+    audio.play();
 }
 
 /**
@@ -104,19 +119,8 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n);
+    return Math.floorMath.random() * n;
 }
-
-//generates random number 1 - 9.
-//Alex I was thinking of integrating this withyou code with the random number generator (above)
-//and we could assign the return value to correct answer and that would help us choose which
-//picture and sound file isthe right one. A new number would be generated after each new game
-// begins.
-//window.onload = function getCorrect() {
-//   let x = randomNumber(9) + 1;
-//   console.log("The correct answer is : " + x);
-//   document.getElementById("correctAnswer").innerHTML = x;
-//};
 
 /**
  * The purpose of this function is to store the id of the element being
@@ -125,13 +129,28 @@ function randomNumber(n) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke
  */
-function drag(ev) {
-    console.log("drag:" + ev.target.id);
+function dragleave(ev, imageNum) {
+    $(imageNum).show();
+
     ev.dataTransfer.setData("text", ev.target.id);
 }
-
+/**
+ * The purpose of this function is to store the id of the element being
+   dragged in a common storage area, under the key "text".
+ *
+ * This function runs as soon as an element has begun to be dragged.   
+ *
+ * @param ev The event being referenced.
+ * @param imageNum The ID of the correct image.
+ * Author: Travis Burke
+ */
+function drag(ev, imageNum) {
+    $(imageNum).hide();
+    ev.dataTransfer.setData("", ev.target.id);
+}
 /**
  * The purpose of this function is to suspend the default behaviour so that
    instead the dragged element can potentially end up with a new position. 
@@ -139,17 +158,14 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * @param imageNum //needs comment
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke 
  */
 function allowDrop(ev, imageNum) {
     console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
 
-    //this is also going to be correctAnswer
-    //needs to be shown after its done
-    console.log("imageNum=" + imageNum);
-    $("#1").hide();
+    $(imageNum).hide();
 }
 
 /**
@@ -170,7 +186,7 @@ function drop(ev) {
     console.log("drop:" + newLocId);
 
     ev.preventDefault();
-    $("#correctAnswer").hide();
+    $("bearImage").hide();
 
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");
