@@ -72,21 +72,20 @@ window.onload = function loadGame() {
     for (var x = imageIDS[0]; x < imageIDS.length; x++) {
         let correctImage = imageIDS[x];
         if (correctImage == CurrCorrect) {
-            imageNum = correctImage;
+            image = correctImage;
         }
     }
 
     loadWord();
 };
-//loadGame();
 
 /**
  * loads the word that  is being guessed
- * 
+ *
  * Author: Ethan Cooke
  */
 function loadWord() {
-    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + "\">";
+    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + '">';
     document.getElementById("textImg").innerHTML = word;
 }
 
@@ -128,16 +127,15 @@ function randomNumber(n) {
 }
 
 /**
- * The purpose of this function is to store the id of the element being
-   dragged in a common storage area, under the key "text".
+ * The purpose of this function is to show the target image when the dragagable is not over the target.
  *
- * This function runs as soon as an element has begun to be dragged.   
+ * This function runs as soon as the dragged element has left the target..
  *
  * @param ev The event being referenced.
  * @param imageNum The ID of the correct image.
  * Author: Travis Burke
  */
-function dragleave(ev, imageNum) {
+function dragOff(ev, imageNum) {
     $(imageNum).show();
 
     ev.dataTransfer.setData("text", ev.target.id);
@@ -149,11 +147,10 @@ function dragleave(ev, imageNum) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
- * @param imageNum The ID of the correct image.
  * Author: Travis Burke
  */
-function drag(ev, imageNum) {
-    $(imageNum).hide();
+function drag(ev) {
+    $("bearImage").hide();
     ev.dataTransfer.setData("", ev.target.id);
 }
 /**
@@ -184,17 +181,17 @@ function allowDrop(ev, imageNum) {
  * @param ev The event being referenced.
  * Author: Travis Burke 
  */
-function drop(ev) {
+function drop(ev, imageNum) {
     // may need to be edited for 1 dropable.
     // contains the id of the new location
-    let newLocId = ev.target.id.charAt(1);
+    let newLocId = ev.target.id.charAt(imageNum);
     console.log("drop:" + newLocId);
 
     ev.preventDefault();
     $("bearImage").hide();
 
     // contains the id of the element that was being dragged
-    let data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData(images[CurrCorrect]);
     ev.target.appendChild(document.getElementById(data));
 
     //this needs to be changed to display the propper image.

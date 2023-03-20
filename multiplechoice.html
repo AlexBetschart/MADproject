@@ -7,9 +7,9 @@
          encoding must be made known to the browser. Each character
          has a unique value or code as mapped in UTF-8 -->
     <meta charset="utf-8">
-    <!-- Not sure what this does -Travis -->
+    <!-- ALEX CAN YOU ADD A COMMENT -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Not sure what this does -Travis -->
+    <!--   ALEX CAN YOU ADD A COMMENT -->
     <meta name="description" content="Project2">
     <!-- Sets width to the width of the device at scale 1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,7 @@
   </head>
   <body>
 
-         <!-- The target element with 2 possible event types: drop and dragover  here-->
-  <div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  
   <div>
    <!-- Bootstrap Grid System -->
    <div class="container" class="center" onload="loadImages()"  >
@@ -43,9 +42,9 @@
       <div class="row">
         <div class="col-lg-4" id="topLeft" ></div>
         <div class="col-lg-4" id="topMid">
-          <img id='1' src='resources/images/guessImages/aqq.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,1)" ondragleave="dragOff(event,1)" draggable="false"/>
-          <img id='2' src='resources/images/guessImages/eliey.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,2)" ondragleave="dragOff(event,2)" draggable="false"/>
-          <img id='3' src='resources/images/guessImages/kesalk.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,3)" ondragleave="dragOff(event,3)" draggable="false"/>
+          <img id='1' src='resources/images/guessImages/aqq.jpg' class="gridImgs" ondrop="drop(event,1)" ondragover="allowDrop(event,1)" ondragleave="dragOff(event,1)" draggable="false"/>
+          <img id='2' src='resources/images/guessImages/eliey.jpg' class="gridImgs" ondrop="drop(event,2)" ondragover="allowDrop(event,2)" ondragleave="dragOff(event,2)" draggable="false"/>
+          <img id='3' src='resources/images/guessImages/kesalk.jpg' class="gridImgs" ondrop="drop(event,3)" ondragover="allowDrop(event,3)" ondragleave="dragOff(event,3)" draggable="false"/>
         </div>
         <div class="col-lg-4" id="topRight"></div>
       </div>  
@@ -54,18 +53,18 @@
           <img id="bearImage" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" ondrop="event">
         </div>
         <div class="col-lg-4" id="midMid">
-          <img id='4' src='resources/images/guessImages/kil.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,4)" ondragleave="dragOff(event,4)" draggable="false"/>
-          <img id='5' src='resources/images/guessImages/ltu.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,5)" ondragleave="dragOff(event,5)" draggable="false"/>
-          <img id='6' src='resources/images/guessImages/mijisi.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,6)" ondragleave="dragOff(event,6)" draggable="false"/>
+          <img id='4' src='resources/images/guessImages/kil.jpg' class="gridImgs" ondrop="drop(event,4)" ondragover="allowDrop(event,4)" ondragleave="dragOff(event,4)" draggable="false"/>
+          <img id='5' src='resources/images/guessImages/ltu.jpg' class="gridImgs" ondrop="drop(event,5)" ondragover="allowDrop(event,5)" ondragleave="dragOff(event,5)" draggable="false"/>
+          <img id='6' src='resources/images/guessImages/mijisi.jpg' class="gridImgs" ondrop="drop(event,6)" ondragover="allowDrop(event,6)" ondragleave="dragOff(event,6)" draggable="false"/>
         </div>
         <div class="col-lg-4" id="midRight"></div>
       </div>
       <div class="row">
         <div class="col-lg-4" id="bottomLeft"></div>
         <div class="col-lg-4" id="bottomMid">
-          <img id='7' src='resources/images/guessImages/nin.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,7)" ondragleave="dragOff(event,7)" draggable="false"/>
-          <img id='8' src='resources/images/guessImages/teluisi.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,8)" ondragleave="dragOff(event,8)" draggable="false"/>
-          <img id='9' src='resources/images/guessImages/wiktm.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,9)" ondragleave="dragOff(event,9)" draggable="false"/>
+          <img id='7' src='resources/images/guessImages/nin.jpg' class="gridImgs" ondrop="drop(event,7)" ondragover="allowDrop(event,7)" ondragleave="dragOff(event,7)" draggable="false"/>
+          <img id='8' src='resources/images/guessImages/teluisi.jpg' class="gridImgs" ondrop="drop(event,8)" ondragover="allowDrop(event,8)" ondragleave="dragOff(event,8)" draggable="false"/>
+          <img id='9' src='resources/images/guessImages/wiktm.jpg' class="gridImgs" ondrop="drop(event,9)" ondragover="allowDrop(event,9)" ondragleave="dragOff(event,9)" draggable="false"/>
         </div>
         <div class="col-lg-4" id="bottomRight"></div>
       </div>
