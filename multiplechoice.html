@@ -18,7 +18,7 @@
     <!-- Make main.css accessible to this file -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Make jquery accessable to this file -->
-    <script src="./scripts/jquery-3.6.0.js"></script>
+    <script src="scripts/jquery-3.6.0.js"></script>
     <!--Allow use of require-->
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <!-- make the JavaScript file available to this file -->
@@ -39,8 +39,9 @@
     <div class="row">
       <div class="col-lg-4" ></div>
       <div class="col-lg-4" id="titleRow">
-        <input type="image" src="resources/images/resourceImages/vol.jpg" onclick="playAudio()">
-        <img id="correctText" src="../resources/images/words/ltuText.jpg">
+        <input id="audio-button" type="image" src="resources/images/resourceImages/vol.jpg" onclick="playAudio()">
+        <div id="textImg"></div>
+        <script>loadWord()</script>
       </div>
       <div class="col-lg-4" ></div>
     </div>

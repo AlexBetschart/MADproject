@@ -61,6 +61,15 @@ function startGame() {
   CurrCorrect = randomNumber(9);
 }
 startGame();
+
+
+function loadWord() {
+    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + "\">";
+    let div = document.getElementById("textImg");
+    console.log(word);
+    document.getElementById("textImg").innerHTML = word;
+}
+
 /**
  * changes contents of html file if answer is correct
  */

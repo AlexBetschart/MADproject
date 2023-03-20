@@ -55,3 +55,28 @@ textImgs {
   width: 115%;
   height: 100%;
 }/*# sourceMappingURL=main.css.map */
+
+/*
+Style settings for the audio button
+
+Author: Ethan Cooke
+*/
+#audio-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/*
+Style settings for the question text img
+
+Author: Ethan Cooke
+*/
+#wordImg {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+}
+
+#titleRow {
+  display: flex;
+}
