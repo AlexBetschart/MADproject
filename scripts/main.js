@@ -76,8 +76,13 @@ window.onload = function loadGame() {
         }
     }
 };
-//startGame();
+//loadGame();
 
+/**
+ * loads the word that  is being guessed
+ * 
+ * Author: Ethan Cooke
+ */
 function loadWord() {
     let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + "\">";
     let div = document.getElementById("textImg");
@@ -119,7 +124,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floorMath.random() * n;
+    return Math.floor(Math.random() * n);
 }
 
 /**
