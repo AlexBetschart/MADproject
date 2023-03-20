@@ -169,3 +169,24 @@ function drop(ev) {
         console.log("tknu'kwalsi ap (Try Again)");
     }
 }
+
+/**
+ * A modal that apprears depending on wheter the answer is right or wrong
+ *
+*
+*  *Note to self make sure to add a div for the ondrop on the main html file
+ * Author: Rian Ahmed
+ */
+
+let rightModal = document.getElementById("correctChoice");
+let wrongModal = document.getElementById("wrongChoice");
+
+function correctAnswer {
+  rightModal.style.display = "block"
+  wrongModal.style.display = "none"
+}
+
+function wrongAnswer {
+  wrongModal.style.display = "block"
+  rightModal.style.display = "none"
+}
