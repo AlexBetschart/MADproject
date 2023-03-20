@@ -27,7 +27,7 @@
   <body>
 
          <!-- The target element with 2 possible event types: drop and dragover  here-->
-  <!--<div ondrop="drop(event)" ondragover="allowDrop(event)"></div>*/-->
+  <div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
   <div>
    <!-- Bootstrap Grid System -->
    <div class="container" class="center" onload="loadImages()"  >
@@ -51,7 +51,7 @@
       </div>  
       <div class="row">
         <div class="col-lg-4" id="midLeft">
-          <img id="correctAnswer" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" ondrop="event,1">
+          <img id="bearImage" src="resources/images/resourceImages/bear.jpg" class="centerBear" draggable="true" ondragstart="drag(event)" ondrop="event">
         </div>
         <div class="col-lg-4" id="midMid">
           <img id='4' src='resources/images/guessImages/kil.jpg' class="gridImgs" ondrop="drop(event)" ondragover="allowDrop(event,4)" ondragleave="dragOff(event,4)" draggable="false"/>

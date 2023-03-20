@@ -30,10 +30,19 @@ const images = [
         "resources/images/words/ninText.jpg",
         "resources/images/words/teluisiText.jpg",
         "resources/images/words/wiktmText.jpg",
+    ],
+    imageIDS = [
+        document.getElementById("1"),
+        document.getElementById("2"),
+        document.getElementById("3"),
+        document.getElementById("4"),
+        document.getElementById("5"),
+        document.getElementById("6"),
+        document.getElementById("7"),
+        document.getElementById("8"),
+        document.getElementById("9"),
     ];
-
 let CurrCorrect;
-
 //$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
 function loadImages() {
@@ -59,10 +68,18 @@ function loadImages() {
 /**
  * adds all necessary html to begin the game
  */
-function startGame() {
+window.onload = function loadGame() {
     CurrCorrect = randomNumber(9);
-}
-startGame();
+
+    //find the correct image
+    for (var x = imageIDS[0]; x < imageIDS.length(); x++) {
+        let correctImage = imageIDS[x];
+        if (correctImage == CurrCorrect) {
+            imageNum = correctImage;
+        }
+    }
+};
+//startGame();
 /**
  * changes contents of html file if answer is correct
  */
@@ -100,8 +117,6 @@ function randomNumber(n) {
     return Math.floorMath.random() * n;
 }
 
-//   document.getElementById("correctAnswer").innerHTML = x;
-
 /**
  * The purpose of this function is to store the id of the element being
    dragged in a common storage area, under the key "text".
@@ -109,12 +124,11 @@ function randomNumber(n) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
- * @param imageNum
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke
  */
 function dragleave(ev, imageNum) {
-    let imageNum = new imageNum(images[CurrCorrect]);
-    imageNum.show();
+    $(imageNum).show();
 
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -125,13 +139,12 @@ function dragleave(ev, imageNum) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
- * @param imageNum The image to be hidden/shown
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke
  */
 function drag(ev, imageNum) {
-    let imageNum = new imageNum(images[CurrCorrect]);
-    imageNum.hide();
-    ev.dataTransfer.setData("text", ev.target.id);
+    $(imageNum).hide();
+    ev.dataTransfer.setData("", ev.target.id);
 }
 /**
  * The purpose of this function is to suspend the default behaviour so that
@@ -140,15 +153,14 @@ function drag(ev, imageNum) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * @param imageNum The image to be hidden/shown
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke 
  */
 function allowDrop(ev, imageNum) {
     console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
 
-    let imageNum = new imageNum(images[CurrCorrect]);
-    imageNum.hide();
+    $(imageNum).hide();
 }
 
 /**
@@ -169,7 +181,7 @@ function drop(ev) {
     console.log("drop:" + newLocId);
 
     ev.preventDefault();
-    $("correctAnswer").hide();
+    $("bearImage").hide();
 
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");
