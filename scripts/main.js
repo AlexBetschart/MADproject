@@ -93,7 +93,9 @@ function loadWord() {
 /**
  * changes contents of html file if answer is correct
  */
-function onSuccess() {}
+function onSuccess() {
+    
+}
 
 /**
  * changes contents of html file if answer is incorrect
