@@ -97,7 +97,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n + 1);
+    return Math.floorMath.random() * n;
 }
 
 //   document.getElementById("correctAnswer").innerHTML = x;
@@ -109,13 +109,30 @@ function randomNumber(n) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
+ * @param imageNum
  * Author: Travis Burke
  */
-function drag(ev) {
-    console.log("drag:" + ev.target.id);
+function dragleave(ev, imageNum) {
+    let imageNum = new imageNum(images[CurrCorrect]);
+    imageNum.show();
+
     ev.dataTransfer.setData("text", ev.target.id);
 }
-
+/**
+ * The purpose of this function is to store the id of the element being
+   dragged in a common storage area, under the key "text".
+ *
+ * This function runs as soon as an element has begun to be dragged.   
+ *
+ * @param ev The event being referenced.
+ * @param imageNum The image to be hidden/shown
+ * Author: Travis Burke
+ */
+function drag(ev, imageNum) {
+    let imageNum = new imageNum(images[CurrCorrect]);
+    imageNum.hide();
+    ev.dataTransfer.setData("text", ev.target.id);
+}
 /**
  * The purpose of this function is to suspend the default behaviour so that
    instead the dragged element can potentially end up with a new position. 
@@ -123,17 +140,15 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * @param imageNum //needs comment
+ * @param imageNum The image to be hidden/shown
  * Author: Travis Burke 
  */
 function allowDrop(ev, imageNum) {
     console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
 
-    //this is also going to be correctAnswer
-    //needs to be shown after its done
-    console.log("imageNum=" + imageNum);
-    $("#1").hide();
+    let imageNum = new imageNum(images[CurrCorrect]);
+    imageNum.hide();
 }
 
 /**
@@ -154,7 +169,7 @@ function drop(ev) {
     console.log("drop:" + newLocId);
 
     ev.preventDefault();
-    $("#CurrCorrect").hide();
+    $("correctAnswer").hide();
 
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");
