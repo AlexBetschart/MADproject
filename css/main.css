@@ -23,7 +23,7 @@ hand portion of the screen.
 Author: Travis Burke here.
 */
 .centerBear {
-  width: 26%;
+  width: 24%;
   margin-left: 28%;
 }
 
@@ -63,6 +63,7 @@ Author: Ethan Cooke
 #audio-button {
   display: inline-block;
   cursor: pointer;
+  width: 24%;
 }
 
 /*
@@ -72,10 +73,11 @@ Author: Ethan Cooke
 */
 #wordImg {
   display: inline-block;
-  width: 200px;
-  height: 100px;
+  width: 150px;
+  height: 75px;
 }
 
 #titleRow {
   display: flex;
+  width: 30%;
 }
