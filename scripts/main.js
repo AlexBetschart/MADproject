@@ -69,12 +69,14 @@ window.onload = function loadGame() {
     CurrCorrect = randomNumber(9);
 
     //find the correct image
-    for (var x = imageIDS[0]; x < imageIDS.length(); x++) {
+    for (var x = imageIDS[0]; x < imageIDS.length; x++) {
         let correctImage = imageIDS[x];
         if (correctImage == CurrCorrect) {
             imageNum = correctImage;
         }
     }
+
+    loadWord();
 };
 //loadGame();
 
@@ -85,8 +87,6 @@ window.onload = function loadGame() {
  */
 function loadWord() {
     let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + "\">";
-    let div = document.getElementById("textImg");
-    console.log(word);
     document.getElementById("textImg").innerHTML = word;
 }
 
