@@ -81,7 +81,7 @@ window.onload = function loadGame() {
 //loadGame();
 
 /**
- * loads the word that  is being guessed
+ * loads the word that is being guessed
  * 
  * Author: Ethan Cooke
  */
