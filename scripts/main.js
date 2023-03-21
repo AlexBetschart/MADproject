@@ -30,21 +30,9 @@ const images = [
         "resources/images/words/ninText.jpg",
         "resources/images/words/teluisiText.jpg",
         "resources/images/words/wiktmText.jpg",
-    ],
-    imageIDS = [
-        document.getElementById("1"),
-        document.getElementById("2"),
-        document.getElementById("3"),
-        document.getElementById("4"),
-        document.getElementById("5"),
-        document.getElementById("6"),
-        document.getElementById("7"),
-        document.getElementById("8"),
-        document.getElementById("9"),
     ];
 let CurrCorrect;
 let gameScore = 0;
-//$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
@@ -69,24 +57,24 @@ function loadImages() {
 /**
  * all code that needs to be run before the game can be played
  *
- * Author: Ethan Cooke (created stub/added loadWord())
+ * Authors: Ethan Cooke (created stub/added loadWord())
+ *          Travis Burke (hide images )
  */
 window.onload = function loadGame() {
     CurrCorrect = randomNumber(9);
 
+    //Hide success and oops images on start.
     $("#TopStar").hide();
     $("#TopSun").hide();
     $("#oops").hide();
-    $("#TopStar").hide();
+    $("#Success").hide();
     $("#BottomStar").hide();
-    $("#BottomStar").hide();
+    $("#BottomSun").hide();
 
-    //find the correct image
-    for (var x = imageIDS[0]; x < imageIDS.length; x++) {
-        let correctImage = imageIDS[x];
-        if (correctImage == CurrCorrect) {
-            image = correctImage;
-        }
+    // Loop through the image IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and show it
+        $("#image" + i).show();
     }
 
     loadWord();
@@ -108,6 +96,7 @@ function loadWord() {
  *
  *  Author: Rian Ahmed,
  *          Ethan Cooke (Created play again button)
+ *          Travis Burke (Show success images)
  */
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
@@ -116,6 +105,11 @@ function onSuccess() {
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
+
+    //Display Success images
+    $("#TopStar").show();
+    $("#Success").show();
+    $("#BottomStar").show();
 }
 
 /**
@@ -123,8 +117,14 @@ function onSuccess() {
  *  and keeps the score the same
  *
  *  Author: Rian Ahmed
+ *          Travis Burke (Show success images)
  */
-function onFailure() {}
+function onFailure() {
+    //Display Faliure images
+    $("#TopSun").show();
+    $("#oops").show();
+    $("#BottomSun").hide();
+}
 
 /**
  * resets the game to its original state but keeps the Score
@@ -198,7 +198,11 @@ function allowDrop(ev, imageNum) {
     console.log("allowDrop:" + ev.target.id.charAt(1));
     ev.preventDefault();
 
-    $(imageNum).hide();
+    // Loop through the image IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and hide it
+        $("#image" + i).show();
+    }
 }
 
 /**

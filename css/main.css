@@ -44,6 +44,10 @@ Author: Travis Burke here.
 .centerBear {
   width: 24%;
   margin-left: 28%;
+  
+  width: 195px;
+  height: 195px;
+
 }
 
 /* 
@@ -67,7 +71,7 @@ The purpose of this class is to set the correct sizing of the text images.
 
 Author: Travis Burke.
 */
-textImgs {
+.textImgs {
   /* Note the width is expanded so the images display properly
       within the grid */
   width: 115%;
