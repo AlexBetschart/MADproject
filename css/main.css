@@ -93,17 +93,17 @@ Author: Ethan Cooke
 
 #topMid {
   display: flex;
-  width: 585px;
+  width: 400px;
 }
 
 #midMid {
   display: flex;
-  width: 585px;
+  width: 400px;
 }
 
 #bottomMid {
   display: flex;
-  width: 585px;
+  width: 400px;
 }
 .play-button {
   display: block;
