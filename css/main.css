@@ -103,17 +103,17 @@ Author: Ethan Cooke
 
 #topMid {
   display: flex;
-  width: 400px;
+  width: 585px;
 }
 
 #midMid {
   display: flex;
-  width: 400px;
+  width: 585px;
 }
 
 #bottomMid {
   display: flex;
-  width: 400px;
+  width: 585px;
 }
 .play-button {
   display: block;
@@ -124,4 +124,9 @@ Author: Ethan Cooke
   padding: none;
   font-size: 40px;
   font-weight: bold;
+}
+
+.guessImg {
+  width: 195px;
+  height: 195px;
 }
