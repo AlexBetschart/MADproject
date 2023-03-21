@@ -1,82 +1,82 @@
 const images = [
-        "resources/images/guessImages/aqq.jpg",
-        "resources/images/guessImages/eliey.jpg",
-        "resources/images/guessImages/kesalk.jpg",
-        "resources/images/guessImages/kil.jpg",
-        "resources/images/guessImages/ltu.jpg",
-        "resources/images/guessImages/mijisi.jpg",
-        "resources/images/guessImages/nin.jpg",
-        "resources/images/guessImages/teluisi.jpg",
-        "resources/images/guessImages/wiktm.jpg",
-    ],
-    audios = [
-        "resources/audios/aqq.wav",
-        "resources/audios/eliey.wav",
-        "resources/audios/kesalk.wav",
-        "resources/audios/kil.wav",
-        "resources/audios/ltu.wav",
-        "resources/audios/mijisi.wav",
-        "resources/audios/nin.wav",
-        "resources/audios/teluisi.wav",
-        "resources/audios/wiktm.wav",
-    ],
-    wordImages = [
-        "resources/images/words/aqqText.jpg",
-        "resources/images/words/elieyText.jpg",
-        "resources/images/words/kesalkText.jpg",
-        "resources/images/words/kilText.jpg",
-        "resources/images/words/ltuText.jpg",
-        "resources/images/words/mijisiText.jpg",
-        "resources/images/words/ninText.jpg",
-        "resources/images/words/teluisiText.jpg",
-        "resources/images/words/wiktmText.jpg",
-    ],
-    imageIDS = [
-        document.getElementById("1"),
-        document.getElementById("2"),
-        document.getElementById("3"),
-        document.getElementById("4"),
-        document.getElementById("5"),
-        document.getElementById("6"),
-        document.getElementById("7"),
-        document.getElementById("8"),
-        document.getElementById("9"),
-    ];
+  "resources/images/guessImages/aqq.jpg",
+  "resources/images/guessImages/eliey.jpg",
+  "resources/images/guessImages/kesalk.jpg",
+  "resources/images/guessImages/kil.jpg",
+  "resources/images/guessImages/ltu.jpg",
+  "resources/images/guessImages/mijisi.jpg",
+  "resources/images/guessImages/nin.jpg",
+  "resources/images/guessImages/teluisi.jpg",
+  "resources/images/guessImages/wiktm.jpg",
+],
+  audios = [
+    "resources/audios/aqq.wav",
+    "resources/audios/eliey.wav",
+    "resources/audios/kesalk.wav",
+    "resources/audios/kil.wav",
+    "resources/audios/ltu.wav",
+    "resources/audios/mijisi.wav",
+    "resources/audios/nin.wav",
+    "resources/audios/teluisi.wav",
+    "resources/audios/wiktm.wav",
+  ],
+  wordImages = [
+    "resources/images/words/aqqText.jpg",
+    "resources/images/words/elieyText.jpg",
+    "resources/images/words/kesalkText.jpg",
+    "resources/images/words/kilText.jpg",
+    "resources/images/words/ltuText.jpg",
+    "resources/images/words/mijisiText.jpg",
+    "resources/images/words/ninText.jpg",
+    "resources/images/words/teluisiText.jpg",
+    "resources/images/words/wiktmText.jpg",
+  ],
+  imageIDS = [
+    document.getElementById("1"),
+    document.getElementById("2"),
+    document.getElementById("3"),
+    document.getElementById("4"),
+    document.getElementById("5"),
+    document.getElementById("6"),
+    document.getElementById("7"),
+    document.getElementById("8"),
+    document.getElementById("9"),
+  ];
 let CurrCorrect;
 //$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
 function loadImages() {
-    for (var i = 0; i < images.length; i++) {
-        if (i < 3) {
-            $("topMid").append(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        } else if (i < 6) {
-            $("midMid").prepend(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        } else if (i < 9) {
-            $("bottomMid").prepend(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        }
-        console.log("hello" + i + id);
+  for (var i = 0; i < images.length; i++) {
+    if (i < 3) {
+      $("topMid").append(
+        "<img id='" + i + "' src='" + images[i] + "' />"
+      );
+    } else if (i < 6) {
+      $("midMid").prepend(
+        "<img id='" + i + "' src='" + images[i] + "' />"
+      );
+    } else if (i < 9) {
+      $("bottomMid").prepend(
+        "<img id='" + i + "' src='" + images[i] + "' />"
+      );
     }
+    console.log("hello" + i + id);
+  }
 }
 //loadImages();
 
 window.onload = function loadGame() {
-    CurrCorrect = randomNumber(9);
+  CurrCorrect = randomNumber(9);
 
-    //find the correct image
-    for (var x = imageIDS[0]; x < imageIDS.length; x++) {
-        let correctImage = imageIDS[x];
-        if (correctImage == CurrCorrect) {
-            image = correctImage;
-        }
+  //find the correct image
+  for (var x = imageIDS[0]; x < imageIDS.length; x++) {
+    let correctImage = imageIDS[x];
+    if (correctImage == CurrCorrect) {
+      image = correctImage;
     }
+  }
 
-    loadWord();
+  loadWord();
 };
 
 /**
@@ -85,30 +85,30 @@ window.onload = function loadGame() {
  * Author: Ethan Cooke
  */
 function loadWord() {
-    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + '">';
-    document.getElementById("textImg").innerHTML = word;
+  let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + '">';
+  document.getElementById("textImg").innerHTML = word;
 }
 
 /**
  * changes contents of html file if answer is correct
  */
 function onSuccess() {
-    document.getElementById("titleRow").innerHTML =
-        "<div class='play-again'>"
-        + "<button class=\"play-button\">si'owa'si?</button>"
-        + "</div>";
+  document.getElementById("titleRow").innerHTML =
+    "<div class='play-again'>"
+    + "<button class=\"play-button\">si'owa'si?</button>"
+    + "</div>";
 }
 
 /**
  * changes contents of html file if answer is incorrect
  */
-function onFailure() {}
+function onFailure() { }
 
 /**
  * resets the game to its original state
  */
 function resetGame() {
-    location.reload();
+  location.reload();
 }
 
 /**
@@ -117,8 +117,8 @@ function resetGame() {
  * Author: Ethan Cooke
  */
 function playAudio() {
-    let audio = new Audio(audios[CurrCorrect]);
-    audio.play();
+  let audio = new Audio(audios[CurrCorrect]);
+  audio.play();
 }
 
 /**
@@ -128,7 +128,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n);
+  return Math.floor(Math.random() * n);
 }
 
 /**
@@ -141,9 +141,9 @@ function randomNumber(n) {
  * Author: Travis Burke
  */
 function dragOff(ev, imageNum) {
-    $(imageNum).show();
+  $(imageNum).show();
 
-    ev.dataTransfer.setData("text", ev.target.id);
+  ev.dataTransfer.setData("text", ev.target.id);
 }
 /**
  * The purpose of this function is to store the id of the element being
@@ -155,8 +155,8 @@ function dragOff(ev, imageNum) {
  * Author: Travis Burke
  */
 function drag(ev) {
-    $("bearImage").hide();
-    ev.dataTransfer.setData("", ev.target.id);
+  $("bearImage").hide();
+  ev.dataTransfer.setData("", ev.target.id);
 }
 /**
  * The purpose of this function is to suspend the default behaviour so that
@@ -169,10 +169,10 @@ function drag(ev) {
  * Author: Travis Burke 
  */
 function allowDrop(ev, imageNum) {
-    console.log("allowDrop:" + ev.target.id.charAt(1));
-    ev.preventDefault();
+  console.log("allowDrop:" + ev.target.id.charAt(1));
+  ev.preventDefault();
 
-    $(imageNum).hide();
+  $(imageNum).hide();
 }
 
 /**
@@ -187,45 +187,24 @@ function allowDrop(ev, imageNum) {
  * Author: Travis Burke 
  */
 function drop(ev, imageNum) {
-    // may need to be edited for 1 dropable.
-    // contains the id of the new location
-    let newLocId = ev.target.id.charAt(imageNum);
-    console.log("drop:" + newLocId);
+  // may need to be edited for 1 dropable.
+  // contains the id of the new location
+  let newLocId = ev.target.id.charAt(imageNum);
+  console.log("drop:" + newLocId);
 
-    ev.preventDefault();
-    $("bearImage").hide();
+  ev.preventDefault();
+  $("bearImage").hide();
 
-    // contains the id of the element that was being dragged
-    let data = ev.dataTransfer.getData(images[CurrCorrect]);
-    ev.target.appendChild(document.getElementById(data));
+  // contains the id of the element that was being dragged
+  let data = ev.dataTransfer.getData(images[CurrCorrect]);
+  ev.target.appendChild(document.getElementById(data));
 
-    //this needs to be changed to display the propper image.
-    if (data == newLocId) {
-        //need to make it display button for good job and (star images)
-        console.log("kelu'lk tela'tekn (Good Job)");
-    } else {
-        //need to make it display button for try again and (sunflower images)
-        console.log("tknu'kwalsi ap (Try Again)");
-    }
-}
-
-/**
- * A modal that apprears depending on wheter the answer is right or wrong
- *
-*
-*  *Note to self make sure to add a div for the ondrop on the main html file
- * Author: Rian Ahmed
- */
-
-let rightModal = document.getElementById("correctChoice");
-let wrongModal = document.getElementById("wrongChoice");
-
-function correctAnswer {
-  rightModal.style.display = "block"
-  wrongModal.style.display = "none"
-}
-
-function wrongAnswer {
-  wrongModal.style.display = "block"
-  rightModal.style.display = "none"
+  //this needs to be changed to display the propper image.
+  if (data == newLocId) {
+    //need to make it display button for good job and (star images)
+    console.log("kelu'lk tela'tekn (Good Job)");
+  } else {
+    //need to make it display button for try again and (sunflower images)
+    console.log("tknu'kwalsi ap (Try Again)");
+  }
 }
