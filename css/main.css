@@ -23,9 +23,8 @@ hand portion of the screen.
 Author: Travis Burke here.
 */
 .centerBear {
-  width: 8%;
-  margin-left: 30%;
-  margin-top: 5%;
+  width: 24%;
+  margin-left: 28%;
 }
 
 /* 
@@ -55,3 +54,52 @@ textImgs {
   width: 115%;
   height: 100%;
 }/*# sourceMappingURL=main.css.map */
+
+/*
+Style settings for the audio button
+
+Author: Ethan Cooke
+*/
+#audio-button {
+  display: inline-block;
+  cursor: pointer;
+  width: 24%;
+}
+
+/*
+Style settings for the question text img
+
+Author: Ethan Cooke
+*/
+#wordImg {
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+}
+
+#titleRow {
+  display: flex;
+  height: 75px;
+}
+
+#topMid {
+  display: flex;
+}
+
+#midMid {
+  display: flex;
+}
+
+#bottomMid {
+  display: flex;
+}
+.play-button {
+  display: block;
+  margin: auto;
+  width: 300px;
+  background-color: rgb(240, 231, 140);
+  border: none;
+  padding: none;
+  font-size: 40px;
+  font-weight: bold;
+}
