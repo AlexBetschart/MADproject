@@ -92,14 +92,27 @@ Author: Ethan Cooke
 
 #titleRow {
   display: flex;
+  height: 75px;
 }
 
-.col-2 {
+#topMid {
   display: flex;
 }
 
+#midMid {
+  display: flex;
+}
+
+#bottomMid {
+  display: flex;
+}
 .play-button {
   display: block;
   margin: auto;
   width: 300px;
+  background-color: rgb(240, 231, 140);
+  border: none;
+  padding: none;
+  font-size: 40px;
+  font-weight: bold;
 }
