@@ -169,7 +169,7 @@ function dragOff(ev, imageNum) {
  */
 function drag(ev) {
   $("bearImage").hide();
-  ev.dataTransfer.setData("", ev.target.id);
+  ev.dataTransfer.setData("text", ev.target.id);
 }
 /**
  * The purpose of this function is to suspend the default behaviour so that
