@@ -11,6 +11,16 @@ The purpose of this class is to centers objects to the screen.
 
 Author: Travis Burke  here.
 */
+.winLoose {
+  display: flex;
+  width: 195;
+}
+
+/* 
+The purpose of this class is to centers objects to the screen.
+
+Author: Travis Burke  here.
+*/
 .gridImages {
   display: flex;
 }
