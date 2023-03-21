@@ -43,6 +43,7 @@ const images = [
     document.getElementById("9"),
   ];
 let CurrCorrect;
+let gameScore = 0;
 //$("#topMid").append("<img id='1' src='resources/images/guessImages/aqq.jpg'/>");
 
 function loadImages() {
@@ -91,23 +92,35 @@ function loadWord() {
 
 /**
  * changes contents of html file if answer is correct
+*  and increments the score by 1
+*
+*  Author: Rian Ahmed
  */
 function onSuccess() {
   document.getElementById("titleRow").innerHTML =
     "<div class='play-again'>"
     + "<button class=\"play-button\">si'owa'si?</button>"
     + "</div>";
+  gameScore++;
+  sessionStorage.setItem("Score", gameScore);
 }
 
 /**
  * changes contents of html file if answer is incorrect
+*  and keeps the score the same
+*
+*  Author: Rian Ahmed
  */
 function onFailure() { }
 
 /**
- * resets the game to its original state
+ * resets the game to its original state but keeps the Score
+*  by storing it in the session storage.
+*
+*  Author: Rian Ahmed
  */
 function resetGame() {
+  sessionStorage.setItem("Score",);
   location.reload();
 }
 
