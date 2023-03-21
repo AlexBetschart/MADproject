@@ -66,6 +66,11 @@ function loadImages() {
 }
 //loadImages();
 
+/**
+ * all code that needs to be run before the game can be played
+ * 
+ * Author: Ethan Cooke (created stub/added loadWord())
+ */
 window.onload = function loadGame() {
   CurrCorrect = randomNumber(9);
 
@@ -81,7 +86,7 @@ window.onload = function loadGame() {
 };
 
 /**
- * loads the word that  is being guessed
+ * loads the word that is being guessed
  *
  * Author: Ethan Cooke
  */
@@ -94,7 +99,8 @@ function loadWord() {
  * changes contents of html file if answer is correct
 *  and increments the score by 1
 *
-*  Author: Rian Ahmed
+*  Author: Rian Ahmed,
+*          Ethan Cooke (Created play again button)
  */
 function onSuccess() {
   document.getElementById("titleRow").innerHTML =
