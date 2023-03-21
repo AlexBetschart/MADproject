@@ -5,10 +5,7 @@ body {
 }
 
 /* id based styles *****************************************/
-
-
 /* class based styles **************************************/
-
 /* 
 The purpose of this class is to centers objects to the screen.
 
@@ -25,7 +22,6 @@ The purpose of this class is to centers objects to the screen.
 Author: Travis Burke  here.
 */
 .gridImages {
-  display: inline-block;
   display: flex;
 }
 
@@ -107,15 +103,17 @@ Author: Ethan Cooke
 
 #topMid {
   display: flex;
-  width: 585px;
+  width: 400px;
 }
 
 #midMid {
   display: flex;
+  width: 400px;
 }
 
 #bottomMid {
   display: flex;
+  width: 400px;
 }
 .play-button {
   display: block;
