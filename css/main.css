@@ -79,5 +79,8 @@ Author: Ethan Cooke
 
 #titleRow {
   display: flex;
-  width: 30%;
+}
+
+.col-2 {
+  display: flex;
 }
