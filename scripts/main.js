@@ -93,7 +93,10 @@ function loadWord() {
  * changes contents of html file if answer is correct
  */
 function onSuccess() {
-    
+    document.getElementById("titleRow").innerHTML =
+        "<div class='play-again'>"
+        + "<button class=\"play-button\">si'owa'si?</button>"
+        + "</div>";
 }
 
 /**

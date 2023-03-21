@@ -84,3 +84,9 @@ Author: Ethan Cooke
 .col-2 {
   display: flex;
 }
+
+.play-button {
+  display: block;
+  margin: auto;
+  width: 300px;
+}
