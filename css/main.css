@@ -5,7 +5,20 @@ body {
 }
 
 /* id based styles *****************************************/
+
+
 /* class based styles **************************************/
+
+/* 
+The purpose of this class is to centers objects to the screen.
+
+Author: Travis Burke  here.
+*/
+.gridImages {
+  display: inline-block;
+  display: flex;
+}
+
 /* 
 The purpose of this class is to centers objects to the screen.
 
