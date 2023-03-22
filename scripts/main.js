@@ -123,7 +123,7 @@ function onFailure() {
     //Display Faliure images
     $("#TopSun").show();
     $("#oops").show();
-    $("#BottomSun").hide();
+    $("#BottomSun").show();
 }
 
 /**
@@ -154,7 +154,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n);
+    return Math.floor(Math.random() * n) + 1;
 }
 
 /**
@@ -187,8 +187,11 @@ function allowDrop(ev) {
     for (var i = 1; i <= 9; i++) {
         // Use jQuery to select the image by its ID and hide it if it is the correct word.
         if (i == CurrCorrect) {
-            $("#image" + i).hide();
+            //instead of hiding the image use the css visability property
+            $("#image" + i).css("visibility", "hidden");
             console.log("allowDrop:" + ev.target.id.charAt($("#image" + i)));
+        } else {
+            $("#image" + i).css("visibility", "visable");
         }
     }
 }
@@ -205,24 +208,28 @@ function allowDrop(ev) {
  * Author: Travis Burke 
  */
 function drop(ev) {
-    //prevent default browswer behavior.
+    //prevent default browser behavior.
     ev.preventDefault();
+
+    let newLocId = null;
 
     // Loop through the target IDs
     for (var i = 1; i <= 9; i++) {
         // Use jQuery to select the image by its ID and hide it if it is the correct word.
         if (i == CurrCorrect) {
-            let newLocId = ev.target.id.charAt($("#target" + i));
+            //newLocId = $("#target" + i).attr("id");
+            newLocId = $("#image" + i).attr("id");
+            $("#" + newLocId).css("visibility", "visable");
         }
     }
     console.log("drop:" + newLocId);
 
     // contains the id of the element that was being dragged
-    let data = ev.dataTransfer.getData($("text"));
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    //this needs to be changed to display the propper image.
-    if (data == newLocId) {
+    //this needs to be changed to display the proper image.
+    if (data === newLocId) {
         // call success function
         onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
