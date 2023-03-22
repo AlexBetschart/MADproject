@@ -189,7 +189,7 @@ function allowDrop(ev) {
         if (i == CurrCorrect) {
             //instead of hiding the image use the css visability property
             $("#image" + i).css("visibility", "hidden");
-            console.log("allowDrop:" + ev.target.id.charAt($("#image" + i)));
+            console.log("allowDrop:" + ev.target.id.charAt($("#target" + i)));
         } else {
             $("#image" + i).css("visibility", "visable");
         }
@@ -211,14 +211,15 @@ function drop(ev) {
     //prevent default browser behavior.
     ev.preventDefault();
 
-    let newLocId = null;
-
+    let newLocId = ev.target.id;
     // Loop through the target IDs
     for (var i = 1; i <= 9; i++) {
         // Use jQuery to select the image by its ID and hide it if it is the correct word.
+
+        //newLocId = $("#target" + i).attr("id");
+        let newLocId = ev.target.id;
+
         if (i == CurrCorrect) {
-            //newLocId = $("#target" + i).attr("id");
-            newLocId = $("#image" + i).attr("id");
             $("#" + newLocId).css("visibility", "visable");
         }
     }
@@ -229,7 +230,7 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     //this needs to be changed to display the proper image.
-    if (data === newLocId) {
+    if ("target" + CurrCorrect === newLocId) {
         // call success function
         onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
@@ -237,5 +238,7 @@ function drop(ev) {
         //call failure function
         onFailure();
         console.log("tknu'kwalsi ap (Try Again)");
+        console.log("target" + CurrCorrect);
+        console.log(newLocId);
     }
 }
