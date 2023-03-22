@@ -1,30 +1,151 @@
+const images = [
+        "resources/images/guessImages/aqq.jpg",
+        "resources/images/guessImages/eliey.jpg",
+        "resources/images/guessImages/kesalk.jpg",
+        "resources/images/guessImages/kil.jpg",
+        "resources/images/guessImages/ltu.jpg",
+        "resources/images/guessImages/mijisi.jpg",
+        "resources/images/guessImages/nin.jpg",
+        "resources/images/guessImages/teluisi.jpg",
+        "resources/images/guessImages/wiktm.jpg",
+    ],
+    audios = [
+        "resources/audios/aqq.wav",
+        "resources/audios/eliey.wav",
+        "resources/audios/kesalk.wav",
+        "resources/audios/kil.wav",
+        "resources/audios/ltu.wav",
+        "resources/audios/mijisi.wav",
+        "resources/audios/nin.wav",
+        "resources/audios/teluisi.wav",
+        "resources/audios/wiktm.wav",
+    ],
+    wordImages = [
+        "resources/images/words/aqqText.jpg",
+        "resources/images/words/elieyText.jpg",
+        "resources/images/words/kesalkText.jpg",
+        "resources/images/words/kilText.jpg",
+        "resources/images/words/ltuText.jpg",
+        "resources/images/words/mijisiText.jpg",
+        "resources/images/words/ninText.jpg",
+        "resources/images/words/teluisiText.jpg",
+        "resources/images/words/wiktmText.jpg",
+    ];
+let CurrCorrect;
+let gameScore = 0;
+
+function loadImages() {
+    for (var i = 0; i < images.length; i++) {
+        if (i < 3) {
+            $("topMid").append(
+                "<img id='" + i + "' src='" + images[i] + "' />"
+            );
+        } else if (i < 6) {
+            $("midMid").prepend(
+                "<img id='" + i + "' src='" + images[i] + "' />"
+            );
+        } else if (i < 9) {
+            $("bottomMid").prepend(
+                "<img id='" + i + "' src='" + images[i] + "' />"
+            );
+        }
+        console.log("hello" + i + id);
+    }
+}
+//loadImages();
 
 /**
- * adds all necessary html to begin the game
+ * all code that needs to be run before the game can be played
+ *
+ * Authors: Ethan Cooke (created stub/added loadWord())
+ *          Travis Burke (hide and showimages)
  */
-function startGame() {}
+window.onload = function loadGame() {
+    CurrCorrect = randomNumber(9);
+
+    //Hide success and oops images on start.
+    $("#TopStar").hide();
+    $("#TopSun").hide();
+    $("#oops").hide();
+    $("#Success").hide();
+    $("#BottomStar").hide();
+    $("#BottomSun").hide();
+
+    // Loop through the image IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and show it
+        $("#image" + i).show();
+    }
+
+    loadWord();
+};
+
+/**
+ * loads the word that is being guessed
+ *
+ * Author: Ethan Cooke
+ */
+function loadWord() {
+    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + '">';
+    document.getElementById("textImg").innerHTML = word;
+}
 
 /**
  * changes contents of html file if answer is correct
+ *  and increments the score by 1
+ *
+ *  Author: Rian Ahmed,
+ *          Ethan Cooke (Created play again button)
+ *          Travis Burke (Show success images)
  */
-function onSuccess() {}
+function onSuccess() {
+    document.getElementById("titleRow").innerHTML =
+        "<div class='play-again'>" +
+        "<button class=\"play-button\">si'owa'si?</button>" +
+        "</div>";
+    gameScore++;
+    sessionStorage.setItem("Score", gameScore);
+
+    //Display Success images
+    $("#TopStar").show();
+    $("#Success").show();
+    $("#BottomStar").show();
+}
 
 /**
  * changes contents of html file if answer is incorrect
+ *  and keeps the score the same
+ *
+ *  Author: Rian Ahmed
+ *          Travis Burke (Show success images)
  */
-function onFailure() {}
+function onFailure() {
+    //Display Faliure images
+    $("#TopSun").show();
+    $("#oops").show();
+    $("#BottomSun").show();
+}
 
 /**
- * resets the game to its original state
+ * resets the game to its original state but keeps the Score
+ *  by storing it in the session storage.
+ *
+ *  Author: Rian Ahmed
  */
 function resetGame() {
+    sessionStorage.setItem("Score");
     location.reload();
 }
 
 /**
  * plays the audio of the current correct answer
+ *
+ * Author: Ethan Cooke
  */
-function playAudio() {}
+function playAudio() {
+    let audio = new Audio(audios[CurrCorrect]);
+    audio.play();
+}
 
 /**
  * Generates a random number between 0 and n
@@ -33,19 +154,8 @@ function playAudio() {}
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n);
+    return Math.floor(Math.random() * n) + 1;
 }
-
-//generates random number 1 - 9.
-//Alex I was thinking of integrating this withyou code with the random number generator (above)
-//and we could assign the return value to correct answer and that would help us choose which
-//picture and sound file isthe right one. A new number would be generated after each new game
-// begins.
-//window.onload = function getCorrect() {
-//   let x = randomNumber(9) + 1;
-//   console.log("The correct answer is : " + x);
-//   document.getElementById("correctAnswer").innerHTML = x;
-//};
 
 /**
  * The purpose of this function is to store the id of the element being
@@ -57,10 +167,8 @@ function randomNumber(n) {
  * Author: Travis Burke
  */
 function drag(ev) {
-    console.log("drag:" + ev.target.id);
     ev.dataTransfer.setData("text", ev.target.id);
 }
-
 /**
  * The purpose of this function is to suspend the default behaviour so that
    instead the dragged element can potentially end up with a new position. 
@@ -68,17 +176,24 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * @param imageNum //needs comment
+ * @param imageNum The ID of the correct image.
  * Author: Travis Burke 
  */
-function allowDrop(ev, imageNum) {
-    console.log("allowDrop:" + ev.target.id.charAt(1));
+function allowDrop(ev) {
+    //prevent default browswer behavior.
     ev.preventDefault();
 
-    //this is also going to be correctAnswer
-    //needs to be shown after its done
-    console.log("imageNum=" + imageNum);
-    $("#1").hide();
+    // Loop through the image IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and hide it if it is the correct word.
+        if (i == CurrCorrect) {
+            //instead of hiding the image use the css visability property
+            $("#image" + i).css("visibility", "hidden");
+            console.log("allowDrop:" + ev.target.id.charAt($("#target" + i)));
+        } else {
+            $("#image" + i).css("visibility", "visable");
+        }
+    }
 }
 
 /**
@@ -93,24 +208,37 @@ function allowDrop(ev, imageNum) {
  * Author: Travis Burke 
  */
 function drop(ev) {
-    // may need to be edited for 1 dropable.
-    // contains the id of the new location
-    let newLocId = ev.target.id.charAt(1);
-    console.log("drop:" + newLocId);
-
+    //prevent default browser behavior.
     ev.preventDefault();
-    $("#correctAnswer").hide();
+
+    let newLocId = ev.target.id;
+    // Loop through the target IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and hide it if it is the correct word.
+
+        //newLocId = $("#target" + i).attr("id");
+        let newLocId = ev.target.id;
+
+        if (i == CurrCorrect) {
+            $("#" + newLocId).css("visibility", "visable");
+        }
+    }
+    console.log("drop:" + newLocId);
 
     // contains the id of the element that was being dragged
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    //this needs to be changed to display the propper image.
-    if (data == newLocId) {
-        //need to make it display button for good job and (star images)
+    //this needs to be changed to display the proper image.
+    if ("target" + CurrCorrect === newLocId) {
+        // call success function
+        onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
     } else {
-        //need to make it display button for try again and (sunflower images)
+        //call failure function
+        onFailure();
         console.log("tknu'kwalsi ap (Try Again)");
+        console.log("target" + CurrCorrect);
+        console.log(newLocId);
     }
 }

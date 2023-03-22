@@ -5,38 +5,63 @@ body {
 }
 
 /* id based styles *****************************************/
-/* class based styles **************************************/
 /* 
 The purpose of this class is to centers objects to the screen.
 
-Author: Travis Burke.
+Author: Travis Burke  here.
+*/
+.winLoose {
+  display: flex;
+  width: 195;
+}
+
+/* 
+The purpose of this class is to centers objects to the screen.
+
+Author: Travis Burke  here.
+*/
+.gridImages {
+  display: flex;
+}
+
+/* 
+The purpose of this class is to centers objects to the screen.
+
+Author: Travis Burke  here.
 */
 .center {
-  margin: auto;
+  margin-left: 60%;
+  margin-top: 5%;
 }
 
 /* 
 The purpose ofthis class is to centers the bear in the left 
 hand portion of the screen.
 
-Author: Travis Burke.
+Author: Travis Burke here.
 */
 .centerBear {
-  width: 20%;
-  margin: auto;
+  
+
+  width: 195px;
+  height: 195px;
+
 }
 
 /* 
 The purpose of this class is to set the correct sizing of the gameplay images in the grid
 and the bear image.
 
-Author: Travis Burke.
+Author: Travis Burke here.
 */
-gridImgs {
+.cent {
   /* Note the width is expanded so the images display properly
       within the grid */
-  width: 30px;
-  height: 30px;
+
+      display: block;
+      margin-left:40%;
+      margin-right: auto;
+      width: 50%;
 }
 
 /* 
@@ -44,9 +69,69 @@ The purpose of this class is to set the correct sizing of the text images.
 
 Author: Travis Burke.
 */
-textImgs {
+.textImgs {
   /* Note the width is expanded so the images display properly
       within the grid */
   width: 115%;
   height: 100%;
 }/*# sourceMappingURL=main.css.map */
+
+.play-button {
+  display: block;
+  margin: auto;
+  width: 300px;
+  background-color: rgb(240, 231, 140);
+  border: none;
+  padding: none;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.guessImg {
+  width: 195px;
+  height: 195px;
+  
+}
+
+/* class based styles **************************************/
+/*
+Style settings for the audio button
+
+Author: Ethan Cooke
+*/
+#audio-button {
+  display: inline-block;
+  cursor: pointer;
+  width: 24%;
+}
+
+/*
+Style settings for the question text img
+
+Author: Ethan Cooke
+*/
+#wordImg {
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+}
+
+#titleRow {
+  display: flex;
+  height: 75px;
+}
+
+#topMid {
+  display: flex;
+  width: 585px;
+}
+
+#midMid {
+  display: flex;
+  width: 585px;
+}
+
+#bottomMid {
+  display: flex;
+  width: 585px;
+}
