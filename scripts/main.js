@@ -58,7 +58,7 @@ function loadImages() {
  * all code that needs to be run before the game can be played
  *
  * Authors: Ethan Cooke (created stub/added loadWord())
- *          Travis Burke (hide images )
+ *          Travis Burke (hide and showimages)
  */
 window.onload = function loadGame() {
     CurrCorrect = randomNumber(9);
@@ -158,20 +158,6 @@ function randomNumber(n) {
 }
 
 /**
- * The purpose of this function is to show the target image when the dragagable is not over the target.
- *
- * This function runs as soon as the dragged element has left the target..
- *
- * @param ev The event being referenced.
- * @param imageNum The ID of the correct image.
- * Author: Travis Burke
- */
-function dragOff(ev, imageNum) {
-    $(imageNum).show();
-
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-/**
  * The purpose of this function is to store the id of the element being
    dragged in a common storage area, under the key "text".
  *
@@ -181,7 +167,6 @@ function dragOff(ev, imageNum) {
  * Author: Travis Burke
  */
 function drag(ev) {
-    $("bearImage").hide();
     ev.dataTransfer.setData("text", ev.target.id);
 }
 /**
@@ -194,14 +179,17 @@ function drag(ev) {
  * @param imageNum The ID of the correct image.
  * Author: Travis Burke 
  */
-function allowDrop(ev, imageNum) {
-    console.log("allowDrop:" + ev.target.id.charAt(1));
+function allowDrop(ev) {
+    //prevent default browswer behavior.
     ev.preventDefault();
 
     // Loop through the image IDs
     for (var i = 1; i <= 9; i++) {
-        // Use jQuery to select the image by its ID and hide it
-        $("#image" + i).show();
+        // Use jQuery to select the image by its ID and hide it if it is the correct word.
+        if (i == CurrCorrect) {
+            $("#image" + i).hide();
+            console.log("allowDrop:" + ev.target.id.charAt($("#image" + i)));
+        }
     }
 }
 
@@ -216,25 +204,31 @@ function allowDrop(ev, imageNum) {
  * @param ev The event being referenced.
  * Author: Travis Burke 
  */
-function drop(ev, imageNum) {
-    // may need to be edited for 1 dropable.
-    // contains the id of the new location
-    let newLocId = ev.target.id.charAt(imageNum);
+function drop(ev) {
+    //prevent default browswer behavior.
+    ev.preventDefault();
+
+    // Loop through the target IDs
+    for (var i = 1; i <= 9; i++) {
+        // Use jQuery to select the image by its ID and hide it if it is the correct word.
+        if (i == CurrCorrect) {
+            let newLocId = ev.target.id.charAt($("#target" + i));
+        }
+    }
     console.log("drop:" + newLocId);
 
-    ev.preventDefault();
-    $("bearImage").hide();
-
     // contains the id of the element that was being dragged
-    let data = ev.dataTransfer.getData(images[CurrCorrect]);
+    let data = ev.dataTransfer.getData($("text"));
     ev.target.appendChild(document.getElementById(data));
 
     //this needs to be changed to display the propper image.
     if (data == newLocId) {
-        //need to make it display button for good job and (star images)
+        // call success function
+        onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
     } else {
-        //need to make it display button for try again and (sunflower images)
+        //call failure function
+        onFailure();
         console.log("tknu'kwalsi ap (Try Again)");
     }
 }

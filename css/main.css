@@ -5,7 +5,6 @@ body {
 }
 
 /* id based styles *****************************************/
-/* class based styles **************************************/
 /* 
 The purpose of this class is to centers objects to the screen.
 
@@ -44,7 +43,7 @@ Author: Travis Burke here.
 .centerBear {
   width: 24%;
   margin-left: 28%;
-  
+
   width: 195px;
   height: 195px;
 
@@ -78,6 +77,24 @@ Author: Travis Burke.
   height: 100%;
 }/*# sourceMappingURL=main.css.map */
 
+.play-button {
+  display: block;
+  margin: auto;
+  width: 300px;
+  background-color: rgb(240, 231, 140);
+  border: none;
+  padding: none;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.guessImg {
+  width: 195px;
+  height: 195px;
+  
+}
+
+/* class based styles **************************************/
 /*
 Style settings for the audio button
 
@@ -118,19 +135,4 @@ Author: Ethan Cooke
 #bottomMid {
   display: flex;
   width: 585px;
-}
-.play-button {
-  display: block;
-  margin: auto;
-  width: 300px;
-  background-color: rgb(240, 231, 140);
-  border: none;
-  padding: none;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.guessImg {
-  width: 195px;
-  height: 195px;
 }
