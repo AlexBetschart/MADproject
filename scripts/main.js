@@ -1,3 +1,13 @@
+/*
+The purpose of this file is to define functions for use in multiplechoice.html
+
+Authors: Rian Amhed
+         Rishi Bhalla 
+         Alex Bestchart
+         Travis Burke
+         Ethan Cooke
+*/
+
 const images = [
         "resources/images/guessImages/aqq.jpg",
         "resources/images/guessImages/eliey.jpg",
@@ -176,7 +186,6 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * @param imageNum The ID of the correct image.
  * Author: Travis Burke 
  */
 function allowDrop(ev) {
@@ -215,10 +224,6 @@ function drop(ev) {
     // Loop through the target IDs
     for (var i = 1; i <= 9; i++) {
         // Use jQuery to select the image by its ID and hide it if it is the correct word.
-
-        //newLocId = $("#target" + i).attr("id");
-        let newLocId = ev.target.id;
-
         if (i == CurrCorrect) {
             $("#" + newLocId).css("visibility", "visable");
         }

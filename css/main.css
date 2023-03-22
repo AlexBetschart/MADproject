@@ -1,3 +1,13 @@
+/*
+The purpose of this file is to add style to multiplechoice.html
+
+Authors: Rian Amhed
+         Rishi Bhalla 
+         Alex Bestchart
+         Travis Burke
+         Ethan Cooke
+*/
+
 /* HTML tag based styles ***********************************/
 body {
   background-color: rgb(240, 231, 140);
@@ -6,9 +16,9 @@ body {
 
 /* id based styles *****************************************/
 /* 
-The purpose of this class is to centers objects to the screen.
+The purpose of this class add style to the win loose images.
 
-Author: Travis Burke  here.
+Author: Travis Burke.
 */
 .winLoose {
   display: flex;
@@ -16,9 +26,9 @@ Author: Travis Burke  here.
 }
 
 /* 
-The purpose of this class is to centers objects to the screen.
+The purpose of this function is to add style to the divs containing the grid images.
 
-Author: Travis Burke  here.
+Author: Travis Burke.
 */
 .gridImages {
   display: flex;
@@ -27,7 +37,7 @@ Author: Travis Burke  here.
 /* 
 The purpose of this class is to centers objects to the screen.
 
-Author: Travis Burke  here.
+Author: Travis Burke.
 */
 .center {
   margin-left: 60%;
@@ -35,24 +45,20 @@ Author: Travis Burke  here.
 }
 
 /* 
-The purpose ofthis class is to centers the bear in the left 
-hand portion of the screen.
+The purpose ofthis class is to add style to the bear image.
 
-Author: Travis Burke here.
+Author: Travis Burke.
 */
 .centerBear {
-  
-
   width: 195px;
   height: 195px;
-
 }
 
 /* 
 The purpose of this class is to set the correct sizing of the gameplay images in the grid
 and the bear image.
 
-Author: Travis Burke here.
+Author: Travis Burke.
 */
 .cent {
   /* Note the width is expanded so the images display properly
@@ -74,7 +80,7 @@ Author: Travis Burke.
       within the grid */
   width: 115%;
   height: 100%;
-}/*# sourceMappingURL=main.css.map */
+}
 
 .play-button {
   display: block;
@@ -86,11 +92,14 @@ Author: Travis Burke.
   font-size: 40px;
   font-weight: bold;
 }
+/* 
+The purpose of this class is to add style to the gridimages themselves.
 
+Author: Travis Burke.
+*/
 .guessImg {
   width: 195px;
   height: 195px;
-  
 }
 
 /* class based styles **************************************/
