@@ -106,7 +106,7 @@ function loadWord() {
  *
  *  Author: Rian Ahmed,
  *          Ethan Cooke (Created play again button)
- *          Travis Burke (Show success images)
+ *          Travis Burke (Show success images and bear)
  */
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
@@ -115,6 +115,9 @@ function onSuccess() {
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
+
+    //make the bear not movable
+    $("#bearImage").css("pointer-events", "none");
 
     //Display Success images
     $("#TopStar").show();
@@ -127,9 +130,12 @@ function onSuccess() {
  *  and keeps the score the same
  *
  *  Author: Rian Ahmed
- *          Travis Burke (Show success images)
+ *          Travis Burke (Show success images and bear)
  */
 function onFailure() {
+    //make the bear not movable
+    $("#bearImage").css("pointer-events", "none");
+
     //Display Faliure images
     $("#TopSun").show();
     $("#oops").show();
