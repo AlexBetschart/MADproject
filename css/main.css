@@ -9,6 +9,12 @@ Authors: Rian Amhed (A00437022)
 */
 
 /* HTML tag based styles ***********************************/
+/*
+The purpose of this tag is to ad style to the entire body of the html page.
+
+Authors: Travis Burke Added the correct background color.
+
+*/
 body {
   background-color: rgb(240, 231, 140);
   margin: auto;
@@ -83,7 +89,7 @@ Author: Travis Burke. Wrote initial class.
 }
 
 /*
-Style settings for the play again button
+The prupose of this class is to style the play again button.
 
 Author: Ethan Cooke Wrote inital class.
 */
@@ -99,9 +105,9 @@ Author: Ethan Cooke Wrote inital class.
 }
 
 /*
-Make the play button turn magenta on hover. Change pointer sytle.
+The prupose of this class is to make the play button turn magenta on hover. Change pointer sytle.
 
-Author: Alex Betschart
+Author: Alex Betschart Wrote initial function.
 */
 #play-button:hover {
   color: magenta;
@@ -119,7 +125,7 @@ Author: Travis Burke. Wrote initial class.
 
 /* ID based styles **************************************/
 /*
-Style settings for the audio button
+The prupose of this ID is to Style settings for the audio button
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -130,7 +136,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the question text img
+The prupose of this ID is to style settings for the question text img.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -141,7 +147,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style seetings for the title row of the grid
+The prupose of this ID is to style settings for the title row of the grid.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -151,7 +157,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the top row of the grid of images
+The prupose of this ID is to style settings for the top row of the grid of images.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -161,7 +167,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the middle row of the grid of images
+The prupose of this ID is to style settings for the middle row of the grid of images.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -171,7 +177,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the bottom roww of the grid of images
+The prupose of this ID is to style settings for the bottom row of the grid of images.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -181,7 +187,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the text displayed on success
+The prupose of this ID is to style settings for the text displayed on success.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
@@ -190,7 +196,7 @@ Author: Ethan Cooke. Wrote inital ID.
 }
 
 /*
-Style settings for the text displayed on failure
+The prupose of this ID is to style settings for the text displayed on failure.
 
 Author: Ethan Cooke.Wrote inital ID.
 */
