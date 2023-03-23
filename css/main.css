@@ -87,7 +87,7 @@ Style settings for the play again button
 
 Author: Ethan Cooke Wrote inital class.
 */
-.play-button {
+#play-button {
   display: block;
   position: absolute;
   width: 300px;
@@ -96,6 +96,16 @@ Author: Ethan Cooke Wrote inital class.
   padding-left: 140px;
   font-size: 40px;
   font-weight: bold;
+}
+
+/*
+Make the play button turn magenta on hover. Change pointer sytle.
+
+Author: Alex Betschart
+*/
+#play-button:hover {
+  color: magenta;
+  cursor: pointer;
 }
 /* 
 The purpose of this class is to add style to the gridimages themselves.
