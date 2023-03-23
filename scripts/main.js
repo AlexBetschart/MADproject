@@ -8,7 +8,9 @@ Authors: Rian Amhed
          Ethan Cooke
 */
 
+// Global Variables
 const images = [
+        //aray of face images
         "resources/images/guessImages/aqq.jpg",
         "resources/images/guessImages/eliey.jpg",
         "resources/images/guessImages/kesalk.jpg",
@@ -20,6 +22,7 @@ const images = [
         "resources/images/guessImages/wiktm.jpg",
     ],
     audios = [
+        // array of audio files
         "resources/audios/aqq.wav",
         "resources/audios/eliey.wav",
         "resources/audios/kesalk.wav",
@@ -31,6 +34,7 @@ const images = [
         "resources/audios/wiktm.wav",
     ],
     wordImages = [
+        //array of word images
         "resources/images/words/aqqText.jpg",
         "resources/images/words/elieyText.jpg",
         "resources/images/words/kesalkText.jpg",
@@ -41,9 +45,16 @@ const images = [
         "resources/images/words/teluisiText.jpg",
         "resources/images/words/wiktmText.jpg",
     ];
-let CurrCorrect;
-let gameScore = 0;
+let CurrCorrect; // holds the randomly generated value corresponding to the correct image, audio and word.
+let gameScore = 0; //holds the score, initially 0.
 
+/**
+ *
+ *
+ *
+ *
+ * Authors: (description)
+ */
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
         if (i < 3) {
@@ -62,7 +73,6 @@ function loadImages() {
         console.log("hello" + i + id);
     }
 }
-//loadImages();
 
 /**
  * all code that needs to be run before the game can be played
@@ -93,7 +103,7 @@ window.onload = function loadGame() {
 /**
  * loads the word that is being guessed
  *
- * Author: Ethan Cooke
+ * Author: Ethan Cooke. Wrote initial function.
  */
 function loadWord() {
     let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect - 1] + '">';
@@ -111,7 +121,7 @@ function loadWord() {
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        "<button class=\"play-button\" onclick=\"resetGame()\">si'owa'si?</button>" +
+        '<button class="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
@@ -136,7 +146,7 @@ function onSuccess() {
 function onFailure() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        "<button class=\"play-button\" onclick=\"resetGame()\">si'owa'si?</button>" +
+        '<button class="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
@@ -157,14 +167,14 @@ function onFailure() {
  *  Author: Rian Ahmed
  */
 function resetGame() {
-//sessionStorage.setItem("Score");
+    //sessionStorage.setItem("Score");
     location.reload();
 }
 
 /**
  * plays the audio of the current correct answer
  *
- * Author: Ethan Cooke
+ * Author: Ethan Cooke. Wrote initial function.
  */
 function playAudio() {
     let audio = new Audio(audios[CurrCorrect]);
@@ -175,7 +185,7 @@ function playAudio() {
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 0 <= x < n
- * Author: Alex Betschart
+ * Author: Alex Betschart. Wrote initial function.
  */
 function randomNumber(n) {
     return Math.floor(Math.random() * n) + 1;
@@ -188,7 +198,7 @@ function randomNumber(n) {
  * This function runs as soon as an element has begun to be dragged.   
  *
  * @param ev The event being referenced.
- * Author: Travis Burke
+ * Author: Travis Burke. Wrote initial function.
  */
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
@@ -200,11 +210,14 @@ function drag(ev) {
  * This function runs when a dragged element is over a potential target.
  * 
  * @param ev The event being referenced.
- * Author: Travis Burke 
+ * Author: Travis Burke. Wrote initial function.
  */
 function allowDrop(ev) {
     //prevent default browswer behavior.
     ev.preventDefault();
+
+    //tHIS EFFECTS THE GRAG AND DROP IN A WAY I DONT UNDERSTAND
+    //WE SHOULDN NEED THIS
 
     // Loop through the image IDs
     for (var i = 1; i <= 9; i++) {
@@ -228,7 +241,7 @@ function allowDrop(ev) {
    where the element is dropped.
  *  
  * @param ev The event being referenced.
- * Author: Travis Burke 
+ * Author: Travis Burke. Wrote initial function.
  */
 function drop(ev) {
     //prevent default browser behavior.
@@ -239,7 +252,7 @@ function drop(ev) {
     for (var i = 1; i <= 9; i++) {
         // Use jQuery to select the image by its ID and hide it if it is the correct word.
         if (i == CurrCorrect) {
-            $("#" + newLocId).css("visibility", "visable");
+            $("#" + newLocId).css("visability", "visible");
         }
     }
     console.log("drop:" + newLocId);
@@ -266,11 +279,11 @@ function drop(ev) {
  * The purpose of this function is to make sure that
  * when the bear is dragged on top of any images on
  * the grid the opacity is set to 0.
- * 
+ *
  * @param {ev} = ev is the event being referenced.
- * Author: Rian Ahmed A00437022
+ * Author: Rian Ahmed A00437022. Wrote initial function.
  */
-function dragEnter (ev) {
+function dragEnter(ev) {
     let id = ev.target.id;
     $("#" + id).css("opacity", "0");
 }
@@ -279,11 +292,11 @@ function dragEnter (ev) {
  * The purpose of this function is to make sure that
  * when the bear is dragged away from any images on
  * the grid the visibility returns.
- * 
+ *
  * @param {ev} ev is event being referenced
- * Author: Rian Ahmed A00437022
+ * Author: Rian Ahmed A00437022. Wrote initial function.
  */
-function dragLeave (ev) {
+function dragLeave(ev) {
     let id = ev.target.id;
     $("#" + id).css("opacity", "1");
 }

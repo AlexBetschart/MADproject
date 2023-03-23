@@ -18,7 +18,7 @@ body {
 /* 
 The purpose of this class add style to the win loose images.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .winLoose {
   display: flex;
@@ -28,7 +28,7 @@ Author: Travis Burke.
 /* 
 The purpose of this function is to add style to the divs containing the grid images.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .gridImages {
   display: flex;
@@ -37,7 +37,7 @@ Author: Travis Burke.
 /* 
 The purpose of this class is to centers objects to the screen.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .center {
   margin-left: 60%;
@@ -47,7 +47,7 @@ Author: Travis Burke.
 /* 
 The purpose ofthis class is to add style to the bear image.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .centerBear {
   width: 195px;
@@ -58,7 +58,7 @@ Author: Travis Burke.
 The purpose of this class is to set the correct sizing of the gameplay images in the grid
 and the bear image.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .cent {
   /* Note the width is expanded so the images display properly
@@ -73,7 +73,7 @@ Author: Travis Burke.
 /* 
 The purpose of this class is to set the correct sizing of the text images.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial function.
 */
 .textImgs {
   /* Note the width is expanded so the images display properly
@@ -95,7 +95,7 @@ Author: Travis Burke.
 /* 
 The purpose of this class is to add style to the gridimages themselves.
 
-Author: Travis Burke.
+Author: Travis Burke. Wrote initial class.
 */
 .guessImg {
   width: 195px;
