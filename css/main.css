@@ -82,13 +82,18 @@ Author: Travis Burke. Wrote initial function.
   height: 100%;
 }
 
+/*
+Style settings for the play again button
+
+Author: Ethan Cooke
+*/
 .play-button {
   display: block;
-  margin: auto;
+  position: absolute;
   width: 300px;
   background-color: rgb(240, 231, 140);
   border: none;
-  padding: none;
+  padding-left: 140px;
   font-size: 40px;
   font-weight: bold;
 }
