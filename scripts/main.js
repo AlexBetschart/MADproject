@@ -3,7 +3,7 @@ The purpose of this file is to define functions for use in multiplechoice.html
 
 Authors: Rian Amhed (A00437022)
          Rishi Bhalla 
-         Alex Bestchart
+         Alex Bestchart (A00426091)
          Travis Burke
          Ethan Cooke (A00446392)
 */
@@ -49,7 +49,7 @@ let CurrCorrect; // holds the randomly generated value corresponding to the corr
 let gameScore = 0; //holds the score, initially 0.
 
 /**
- * This function loads the images into the grid when the grid is loaded in the html file
+ * This function loads the images into the grid when the grid is loaded in the html file. Can be used for dynamically loading images.
  *
  * Authors: Alex Bestchart
  */
@@ -119,7 +119,7 @@ function loadWord() {
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        '<button class="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
+        '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
@@ -144,7 +144,7 @@ function onSuccess() {
 function onFailure() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        '<button class="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
+        '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
