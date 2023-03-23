@@ -216,20 +216,9 @@ function allowDrop(ev) {
     //prevent default browswer behavior.
     ev.preventDefault();
 
-    //tHIS EFFECTS THE GRAG AND DROP IN A WAY I DONT UNDERSTAND
-    //WE SHOULDN NEED THIS
+    let i = CurrCorrect;
 
-    // Loop through the image IDs
-    for (var i = 1; i <= 9; i++) {
-        // Use jQuery to select the image by its ID and hide it if it is the correct word.
-        if (i == CurrCorrect) {
-            //instead of hiding the image use the css visability property
-            $("#image" + i).css("visibility", "hidden");
-            console.log("allowDrop:" + ev.target.id.charAt($("#target" + i)));
-        } else {
-            $("#image" + i).css("visibility", "visable");
-        }
-    }
+    console.log("allowDrop:" + ev.target.id.charAt($("#target" + i)));
 }
 
 /**
@@ -248,21 +237,16 @@ function drop(ev) {
     ev.preventDefault();
 
     let newLocId = ev.target.id;
-    // Loop through the target IDs
-    for (var i = 1; i <= 9; i++) {
-        // Use jQuery to select the image by its ID and hide it if it is the correct word.
-        if (i == CurrCorrect) {
-            $("#" + newLocId).css("visability", "visible");
-        }
-    }
-    console.log("drop:" + newLocId);
 
-    // contains the id of the element that was being dragged
-    let data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    // get the number of the image from the droppable element's ID
+    let num = newLocId.replace("target", "");
 
+    // use jQuery to select the div containing the image and append the draggable element to it
+    $("target" + num).append($("#" + ev.dataTransfer.getData("text")));
+
+    newLocId = "target" + newLocId;
     //this needs to be changed to display the proper image.
-    if ("target" + CurrCorrect === newLocId) {
+    if ("target" + CurrCorrect.toString() == newLocId) {
         // call success function
         onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
