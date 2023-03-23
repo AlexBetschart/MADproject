@@ -50,7 +50,7 @@ let gameScore = 0; //holds the score, initially 0.
 
 /**
  * This function loads the images into the grid when the grid is loaded in the html file
- * 
+ *
  * Authors: Alex Bestchart
  */
 function loadImages() {
@@ -253,8 +253,6 @@ function drop(ev) {
         //call failure function
         onFailure();
         console.log("tknu'kwalsi ap (Try Again)");
-        console.log("target" + CurrCorrect);
-        console.log(newLocId);
     }
 }
 
