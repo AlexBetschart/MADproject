@@ -4,7 +4,7 @@ The purpose of this file is to define functions for use in multiplechoice.html
 Authors: Rian Amhed (A00437022)
          Rishi Bhalla 
          Alex Bestchart
-         Travis Burke
+         Travis Burke (A00418937) focused onDragand drop.
          Ethan Cooke (A00446392)
 */
 
@@ -51,7 +51,7 @@ let gameScore = 0; //holds the score, initially 0.
 /**
  * This function loads the images into the grid when the grid is loaded in the html file
  *
- * Authors: Alex Bestchart
+ * Authors: Alex Bestchart wrote initial function.
  */
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
@@ -112,7 +112,7 @@ function loadWord() {
  * changes contents of html file if answer is correct
  *  and increments the score by 1
  *
- *  Author: Rian Ahmed,
+ *  Author: Rian Ahmed wrote initial function.
  *          Ethan Cooke (Created play again button)
  *          Travis Burke (Show success images and bear)
  */
@@ -162,7 +162,7 @@ function onFailure() {
  * resets the game to its original state but keeps the Score
  *  by storing it in the session storage.
  *
- *  Author: Rian Ahmed
+ *  Author: Rian Ahmed wrote initial function.
  */
 function resetGame() {
     //sessionStorage.setItem("Score");
@@ -183,7 +183,8 @@ function playAudio() {
  * Generates a random number between 0 and n
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 0 <= x < n
- * Author: Alex Betschart. Wrote initial function.
+ * Author: Alex Betschart: Wrote initial function.
+ *         Travis Burke: Added the one so it generates (1-9).
  */
 function randomNumber(n) {
     return Math.floor(Math.random() * n) + 1;
@@ -228,7 +229,8 @@ function allowDrop(ev) {
    where the element is dropped.
  *  
  * @param ev The event being referenced.
- * Author: Travis Burke. Wrote initial function. Rian Ahmed, made the images dissapear on bear drop
+ * Author: Travis Burke. Wrote initial function. 
+ *         Rian Ahmed, made the images dissapear on bear drop.
  */
 function drop(ev) {
     //prevent default browser behavior.
