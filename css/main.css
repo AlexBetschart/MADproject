@@ -14,7 +14,7 @@ body {
   margin: auto;
 }
 
-/* id based styles *****************************************/
+/* Class based styles *****************************************/
 /* 
 The purpose of this class add style to the win loose images.
 
@@ -102,7 +102,7 @@ Author: Travis Burke. Wrote initial class.
   height: 195px;
 }
 
-/* class based styles **************************************/
+/* ID based styles **************************************/
 /*
 Style settings for the audio button
 
@@ -125,26 +125,60 @@ Author: Ethan Cooke
   height: 75px;
 }
 
+/*
+Style seetings for the title row of the grid
+
+Author: Ethan Cooke
+*/
 #titleRow {
   display: flex;
   height: 75px;
 }
 
+/*
+Style settings for the top row of the grid of images
+
+Author: Ethan Cooke
+*/
 #topMid {
   display: flex;
   width: 585px;
 }
 
+/*
+Style settings for the middle row of the grid of images
+
+Author: Ethan Cooke
+*/
 #midMid {
   display: flex;
   width: 585px;
 }
 
+/*
+Style settings for the bottom roww of the grid of images
+
+Author: Ethan Cooke
+*/
 #bottomMid {
   display: flex;
   width: 585px;
 }
 
+/*
+Style settings for the text displayed on success
+
+Author: Ethan Cooke
+*/
 #Success {
+  height: 195px;
+}
+
+/*
+Style settings for the text displayed on failure
+
+Author: Ethan Cooke
+*/
+#oops {
   height: 195px;
 }

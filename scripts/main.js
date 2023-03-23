@@ -5,7 +5,7 @@ Authors: Rian Amhed
          Rishi Bhalla 
          Alex Bestchart
          Travis Burke
-         Ethan Cooke
+         Ethan Cooke (A00446392)
 */
 
 // Global Variables
@@ -49,11 +49,9 @@ let CurrCorrect; // holds the randomly generated value corresponding to the corr
 let gameScore = 0; //holds the score, initially 0.
 
 /**
- *
- *
- *
- *
- * Authors: (description)
+ * This function loads the images into the grid when the grid is loaded in the html file
+ * 
+ * Authors: Alex Bestchart
  */
 function loadImages() {
     for (var i = 0; i < images.length; i++) {
@@ -103,7 +101,7 @@ window.onload = function loadGame() {
 /**
  * loads the word that is being guessed
  *
- * Author: Ethan Cooke. Wrote initial function.
+ * Author: Ethan Cooke (Wrote initial function)
  */
 function loadWord() {
     let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect - 1] + '">';
