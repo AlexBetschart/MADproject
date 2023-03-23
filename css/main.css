@@ -144,3 +144,7 @@ Author: Ethan Cooke
   display: flex;
   width: 585px;
 }
+
+#Success {
+  height: 195px;
+}

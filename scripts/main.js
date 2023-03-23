@@ -111,7 +111,7 @@ function loadWord() {
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        "<button class=\"play-button\">si'owa'si?</button>" +
+        "<button class=\"play-button\" onclick=\"resetGame()\">si'owa'si?</button>" +
         "</div>";
     gameScore++;
     sessionStorage.setItem("Score", gameScore);
@@ -131,8 +131,16 @@ function onSuccess() {
  *
  *  Author: Rian Ahmed
  *          Travis Burke (Show success images and bear)
+ *          Ethan Cooke (Added play again button)
  */
 function onFailure() {
+    document.getElementById("titleRow").innerHTML =
+        "<div class='play-again'>" +
+        "<button class=\"play-button\" onclick=\"resetGame()\">si'owa'si?</button>" +
+        "</div>";
+    gameScore++;
+    sessionStorage.setItem("Score", gameScore);
+
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
 
@@ -149,7 +157,7 @@ function onFailure() {
  *  Author: Rian Ahmed
  */
 function resetGame() {
-    sessionStorage.setItem("Score");
+//sessionStorage.setItem("Score");
     location.reload();
 }
 
@@ -170,7 +178,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n) + 1;
+    return Math.floor(Math.random() * n);
 }
 
 /**
