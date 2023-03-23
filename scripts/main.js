@@ -167,7 +167,7 @@ function resetGame() {
  * Author: Ethan Cooke
  */
 function playAudio() {
-    let audio = new Audio(audios[CurrCorrect]);
+    let audio = new Audio(audios[CurrCorrect - 1]);
     audio.play();
 }
 
