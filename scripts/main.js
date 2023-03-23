@@ -261,3 +261,29 @@ function drop(ev) {
         console.log(newLocId);
     }
 }
+
+/**
+ * The purpose of this function is to make sure that
+ * when the bear is dragged on top of any images on
+ * the grid the opacity is set to 0.
+ * 
+ * @param {ev} = ev is the event being referenced.
+ * Author: Rian Ahmed A00437022
+ */
+function dragEnter (ev) {
+    let id = ev.target.id;
+    $("#" + id).css("opacity", "0");
+}
+
+/**
+ * The purpose of this function is to make sure that
+ * when the bear is dragged away from any images on
+ * the grid the visibility returns.
+ * 
+ * @param {ev} ev is event being referenced
+ * Author: Rian Ahmed A00437022
+ */
+function dragLeave (ev) {
+    let id = ev.target.id;
+    $("#" + id).css("opacity", "1");
+}
