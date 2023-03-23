@@ -177,7 +177,7 @@ function resetGame() {
  * Author: Ethan Cooke. Wrote initial function.
  */
 function playAudio() {
-    let audio = new Audio(audios[CurrCorrect]);
+    let audio = new Audio(audios[CurrCorrect - 1]);
     audio.play();
 }
 
