@@ -96,7 +96,7 @@ window.onload = function loadGame() {
  * Author: Ethan Cooke
  */
 function loadWord() {
-    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect] + '">';
+    let word = "<img id='wordImg' src=\"" + wordImages[CurrCorrect - 1] + '">';
     document.getElementById("textImg").innerHTML = word;
 }
 
@@ -178,7 +178,7 @@ function playAudio() {
  * Author: Alex Betschart
  */
 function randomNumber(n) {
-    return Math.floor(Math.random() * n);
+    return Math.floor(Math.random() * n) + 1;
 }
 
 /**
