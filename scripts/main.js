@@ -242,7 +242,7 @@ function drop(ev) {
     let num = newLocId.replace("target", "");
 
     // use jQuery to select the div containing the image and append the draggable element to it
-    $("target" + num).append($("#" + ev.dataTransfer.getData("text")));
+    $("#target" + num).append($("#" + ev.dataTransfer.getData("text")));
 
     newLocId = "target" + newLocId;
     //this needs to be changed to display the proper image.
