@@ -3,13 +3,8 @@ The purpose of this file is to define functions for use in multiplechoice.html
 
 Authors: Rian Amhed (A00437022)
          Rishi Bhalla 
-<<<<<<< HEAD
          Alex Bestchart
          Travis Burke (A00418937) focused onDragand drop.
-=======
-         Alex Bestchart (A00426091)
-         Travis Burke
->>>>>>> 159e89c85fc6c6e3c512952e9c3832e2301cfefe
          Ethan Cooke (A00446392)
 */
 
@@ -54,7 +49,8 @@ let CurrCorrect; // holds the randomly generated value corresponding to the corr
 let gameScore = 0; //holds the score, initially 0.
 
 /**
- * This function loads the images into the grid when the grid is loaded in the html file. Can be used for dynamically loading images.
+ * The purpose of this function is to load the images into the grid when the grid is loaded
+ *  in the html file. Can be used for dynamically loading images.
  *
  * Authors: Alex Bestchart wrote initial function.
  */
@@ -78,7 +74,14 @@ function loadImages() {
 }
 
 /**
- * all code that needs to be run before the game can be played
+ * The purpose of this function is to load all code that needs to be run before
+ * the game can be played.
+ *
+ * Generates arandom number from 1-9 and store it in the CurrCorrect variable
+ *
+ * hide the onSuccess/on failure images.
+ *
+ * loop through the images array and show them in the grid.
  *
  * Authors: Ethan Cooke (created stub/added loadWord())
  *          Travis Burke (hide and showimages)
@@ -104,7 +107,8 @@ window.onload = function loadGame() {
 };
 
 /**
- * loads the word that is being guessed
+ * The purpose of this file is to load the word that is being guessed
+ * so it can be displayed on the top of the grid.
  *
  * Author: Ethan Cooke (Wrote initial function)
  */
@@ -114,8 +118,8 @@ function loadWord() {
 }
 
 /**
- * changes contents of html file if answer is correct
- *  and increments the score by 1
+ * The purpose of this file is to change the contents of html file if answer
+ * is correct and increment the score by 1.
  *
  *  Author: Rian Ahmed wrote initial function.
  *          Ethan Cooke (Created play again button)
@@ -139,8 +143,8 @@ function onSuccess() {
 }
 
 /**
- * changes contents of html file if answer is incorrect
- *  and keeps the score the same
+ * The purpose of this function is to change the
+ * contents of html file if answer is incorrect and keep the score the same.
  *
  *  Author: Rian Ahmed
  *          Travis Burke (Show success images and bear)
@@ -164,8 +168,8 @@ function onFailure() {
 }
 
 /**
- * resets the game to its original state but keeps the Score
- *  by storing it in the session storage.
+ *  The purpose ofthis function is to reset the game to its original
+ *  state but keeps the Score by storing it in the session storage.
  *
  *  Author: Rian Ahmed wrote initial function.
  */
@@ -175,7 +179,8 @@ function resetGame() {
 }
 
 /**
- * plays the audio of the current correct answer
+ * THe purpose of this function is to play the audio of the current correct answer.
+ * This function is called when the audio buttonis clicked.
  *
  * Author: Ethan Cooke. Wrote initial function.
  */
@@ -185,11 +190,12 @@ function playAudio() {
 }
 
 /**
- * Generates a random number between 0 and n
+ * The purpose ofthis functionis to generate a random number between 1 and n
+ *
  * @param n Any int. Exclusive upper bound of possible numbers to generate
- * @returns x where 0 <= x < n
+ * @returns x where 1 <= x < n
  * Author: Alex Betschart: Wrote initial function.
- *         Travis Burke: Added the one so it generates (1-9).
+ *         Travis Burke: Added the 1 so it generates (1-9).
  */
 function randomNumber(n) {
     return Math.floor(Math.random() * n) + 1;
@@ -231,7 +237,8 @@ function allowDrop(ev) {
    and to set the new position of the dropped element; respectively. 
  * 
  * This function also compares the id of the dragged element with the id of
-   where the element is dropped.
+   where the element is dropped anduses that to call onSuccess() and 
+   OnFailure functions.
  *  
  * @param ev The event being referenced.
  * Author: Travis Burke. Wrote initial function. 
