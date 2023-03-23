@@ -1,7 +1,7 @@
 /*
 The purpose of this file is to define functions for use in multiplechoice.html
 
-Authors: Rian Amhed
+Authors: Rian Amhed (A00437022)
          Rishi Bhalla 
          Alex Bestchart
          Travis Burke
@@ -228,13 +228,14 @@ function allowDrop(ev) {
    where the element is dropped.
  *  
  * @param ev The event being referenced.
- * Author: Travis Burke. Wrote initial function.
+ * Author: Travis Burke. Wrote initial function. Rian Ahmed, made the images dissapear on bear drop
  */
 function drop(ev) {
     //prevent default browser behavior.
     ev.preventDefault();
 
     let newLocId = ev.target.id;
+    $("#" + newLocId).css("display", "none");
 
     // get the number of the image from the droppable element's ID
     let num = newLocId.replace("target", "");
@@ -263,7 +264,7 @@ function drop(ev) {
  * the grid the opacity is set to 0.
  *
  * @param {ev} = ev is the event being referenced.
- * Author: Rian Ahmed A00437022. Wrote initial function.
+ * Author: Rian Ahmed. Wrote initial function.
  */
 function dragEnter(ev) {
     let id = ev.target.id;
@@ -276,7 +277,7 @@ function dragEnter(ev) {
  * the grid the visibility returns.
  *
  * @param {ev} ev is event being referenced
- * Author: Rian Ahmed A00437022. Wrote initial function.
+ * Author: Rian Ahmed. Wrote initial function.
  */
 function dragLeave(ev) {
     let id = ev.target.id;
