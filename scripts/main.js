@@ -47,6 +47,7 @@ const images = [
     ];
 let CurrCorrect; // holds the randomly generated value corresponding to the correct image, audio and word.
 let gameScore = 0; //holds the score, initially 0.
+let totalRounds = 0; //holds the total number of rounds
 
 /**
  * The purpose of this function is to load the images into the grid when the grid is loaded
@@ -124,6 +125,7 @@ function loadWord() {
  *  Author: Rian Ahmed wrote initial function.
  *          Ethan Cooke (Created play again button)
  *          Travis Burke (Show success images and bear)
+ *          Rian Ahmed (Added a increment for gamescore and total rounds)
  */
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
@@ -131,7 +133,10 @@ function onSuccess() {
         '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
     gameScore++;
-    sessionStorage.setItem("Score", gameScore);
+    totalRounds++;
+    //sessionStorage.setItem("Score", gameScore);
+
+    // remember to put browser to server communication for storing rounds and score.
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
@@ -149,14 +154,17 @@ function onSuccess() {
  *  Author: Rian Ahmed
  *          Travis Burke (Show success images and bear)
  *          Ethan Cooke (Added play again button)
+ *          Rian Ahmed (Added an increment for total rounds)
  */
 function onFailure() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
         '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
         "</div>";
-    gameScore++;
-    sessionStorage.setItem("Score", gameScore);
+    totalRounds++;
+    //sessionStorage.setItem("Score", gameScore);
+
+    // remember to put browser to server communication for storing rounds and score.
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
