@@ -104,6 +104,12 @@ window.onload = function loadGame() {
         $("#image" + i).show();
     }
 
+    // Score button need to add variables 
+    document.getElementById("titleRow").innerHTML =
+        "<div class='play-again'>" +
+        '<button id="play-button" onclick="resetGame()">"Click Your Score: ' $(gameScore) / $(totalRounds) </button>' +
+        "</div>";
+
     loadWord();
 };
 
