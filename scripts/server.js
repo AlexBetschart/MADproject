@@ -72,8 +72,8 @@ server.use(allowCrossDomain);
  *
  */ 
 server.post('/scorePost', (req, res) => {
-  const gameScore = req.body.gameScore
-  const totalRounds = req.body.totalRounds
+  const gameScore = req.body.gameScore;
+  const totalRounds = req.body.totalRounds;
 
   res.send({
     gameScore: gameScore,
@@ -93,8 +93,8 @@ server.post('/scorePost', (req, res) => {
  *
  */ 
 server.get('/scoreGet', (req, res) => {
-  const gameScore =  // Replace with the actual game score from your server
-  const totalRounds =  // Replace with the actual total rounds from your server
+  const gameScore =  
+  const totalRounds =  
 
   res.send({
     gameScore: gameScore,
