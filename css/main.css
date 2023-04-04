@@ -104,6 +104,11 @@ Author: Ethan Cooke Wrote inital class.
   font-weight: bold;
 }
 
+/*
+The prupose of this class is to style the score button.
+
+Author: Travis Burke Wrote inital class.
+*/
 #score-button{
   display: inline-flex;
   position: absolute;
