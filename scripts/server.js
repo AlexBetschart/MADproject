@@ -53,6 +53,28 @@ const allowCrossDomain = function (req, res, next) {
 // set domain characteristics defined above
 server.use(allowCrossDomain);
 
+
+
+app.post('/score', (req, res) => {
+  const gameScore = req.body.gameScore
+  const totalRounds = req.body.totalRounds
+
+  res.send({
+    gameScore: gameScore,
+    totalRounds: totalRounds
+  })
+})
+
+app.get('/score', (req, res) => {
+  const gameScore =  // Replace with the actual game score from your server
+  const totalRounds =  // Replace with the actual total rounds from your server
+
+  res.send({
+    gameScore: gameScore,
+    totalRounds: totalRounds
+  })
+})
+
 /*
   - Access the http library
   - Use the library function createServer to preset a function call to

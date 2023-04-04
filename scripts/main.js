@@ -49,6 +49,9 @@ let CurrCorrect; // holds the randomly generated value corresponding to the corr
 let gameScore = 0; //holds the score, initially 0.
 let totalRounds = 0; //holds the total number of rounds
 
+// define the base URL for the server
+const SERVER_URL = "http://ugdev.cs.smu.ca:3085";
+
 /**
  * The purpose of this function is to load the images into the grid when the grid is loaded
  *  in the html file. Can be used for dynamically loading images.
@@ -104,10 +107,10 @@ window.onload = function loadGame() {
         $("#image" + i).show();
     }
 
-    // Score button need to add variables 
+    // Score button need to add variables
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
-        '<button id="play-button" onclick="resetGame()">"Click Your Score: ' $(gameScore) / $(totalRounds) </button>' +
+        '<button id="score-button" onclick="resetGame()">"Click Your Score: </button>' +
         "</div>";
 
     loadWord();

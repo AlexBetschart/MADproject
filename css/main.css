@@ -104,6 +104,17 @@ Author: Ethan Cooke Wrote inital class.
   font-weight: bold;
 }
 
+#score-button{
+  display: inline-flex;
+  position: absolute;
+  width: 300px;
+  background-color: rgb(240, 231, 140);
+  border: none;
+  padding-left: 200px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 /*
 The prupose of this class is to make the play button turn magenta on hover. Change pointer sytle.
 
