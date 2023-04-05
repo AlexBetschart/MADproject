@@ -3,7 +3,7 @@ The purpose of this file is to define functions for use in multiplechoice.html
 
 Authors: Rian Amhed (A00437022)
          Rishi Bhalla 
-         Alex Bestchart
+         Alex Bestchart (A00426091)
          Travis Burke (A00418937) focused onDragand drop.
          Ethan Cooke (A00446392)
 */
@@ -67,6 +67,9 @@ const SERVER_URL = "http://ugdev.cs.smu.ca:3085";
  */
 window.onload = function loadGame() {
     CurrCorrect = randomNumber(9);
+    
+    //Updates score data to make sure it is in sync with the server.
+    requestScores()
 
     //Hide success and oops images on start.
     $("#TopStar").hide();
@@ -82,9 +85,11 @@ window.onload = function loadGame() {
         $("#image" + i).show();
     }
 
+
     //Fix title row css on reset
     $("#titleRow").css("justify-content", "center");
     // Score button need to add variables
+
     loadWord();
 };
 
@@ -118,9 +123,10 @@ function onSuccess() {
     totalRounds++;
 
     //sessionStorage.setItem("Score", gameScore);
-    // remember to put browser to server communication for storing rounds and score.
-    let sendScores = {"score":gameScore, "rounds":totalRounds}
-    $.post(SERVER_URL, sendScores, successFn).fail(errorFn)
+    //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
+    //If an error occurs, it is logged to the console.
+    let sendScores = {"gameScore":gameScore, "totalRounds":totalRounds}
+    $.post(SERVER_URL +"/scorePost", sendScores, getScoreSuccess).fail(getScoreError)
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
@@ -149,9 +155,10 @@ function onFailure() {
     totalRounds++;
     //sessionStorage.setItem("Score", gameScore);
 
-    // remember to put browser to server communication for storing rounds and score.
-    let sendScores = {"score":gameScore, "rounds":totalRounds}
-    $.post(SERVER_URL, sendScores, successFn).fail(errorFn)
+    //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
+    //If an error occurs, it is logged to the console.
+    let sendScores = {"gameScore":gameScore, "totalRounds":totalRounds}
+    $.post(SERVER_URL +"/scorePost", sendScores, getScoreSuccess).fail(getScoreError)
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
@@ -296,16 +303,17 @@ function dragLeave(ev) {
  * Author: Alex Betschart
  */
 function requestScores() {
-    $.get(SERVER_URL + "/scoreGet", sendScores, getScoresSuccess).fail(getScoreErrorFn)
+    $.get(SERVER_URL + "/scoreGet", sendScores, getScoresSuccess).fail(getScoreErrorFn);
 }
 
 /**
+ * Updates global variables gameScore and totalRounds to the updated gameScore and totalRounds from server.
  * @param {*} serverScoreData is the JSON containing score data from the server
- * @returns Score data as an array. 0th element is the score, 1st element is the  number of rounds
  * Author: Alex Betschart
  */
 function getScoreSuccess(serverScoreData) {
-    return [serverScoreData.Score, serverScoreData.Rounds]
+    gameScore = serverScoreData.Score;
+    totalRounds = serverScoreData.Rounds;
 }
 
 /**
@@ -314,7 +322,7 @@ function getScoreSuccess(serverScoreData) {
  * Author: Alex Betschart
  */
 function getScoreError(err){
-    console.log("Could not obtain score date from server")
+    console.log("Could not obtain score date from server");
 }
 
 function displayWord() {
