@@ -91,7 +91,7 @@ window.onload = function loadGame() {
     //Fix title row css on reset
     $("#titleRow").css("justify-content", "center");
     // add variables to score button
-    document.getElementById("score-button").innerHTML(gameScore + "/" + totalRounds);
+    document.getElementById("score-button").innerHTML = gameScore + "/" + totalRounds;
 
     loadWord();
 
