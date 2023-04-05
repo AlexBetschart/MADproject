@@ -317,6 +317,11 @@ function getScoreError(err){
     console.log("Could not obtain score date from server")
 }
 
+/**
+ * Changes the css file to display the audio button and word for the round, when the score is clicked.
+ * 
+ * Author: Ethan Cooke
+ */
 function displayWord() {
     $("#audio-button").css("display", "inline-block");
     $("#wordImg").css("display", "inline-block");
