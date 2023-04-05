@@ -198,7 +198,7 @@ function playAudio() {
 }
 
 /**
- * The purpose ofthis functionis to generate a random number between 1 and n
+ * The purpose of this function is to generate a random number between 1 and n
  *
  * @param n Any int. Exclusive upper bound of possible numbers to generate
  * @returns x where 1 <= x < n
@@ -331,6 +331,13 @@ function getScoreError(err){
     console.log("Could not obtain score date from server");
 }
 
+/**
+ * Displays the audio button and word being guessed when the score is clicked.
+ * Also makes the bear draggable to commence playing the game.
+ * 
+ * Author: Ethan Cooke (Wrote initial function)
+ *         Travis Burke (Added bear being draggable)
+ */
 function displayWord() {
     $("#audio-button").css("display", "inline-block");
     $("#wordImg").css("display", "inline-block");
