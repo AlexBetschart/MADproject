@@ -99,7 +99,7 @@ Author: Ethan Cooke Wrote inital class.
   width: 300px;
   background-color: rgb(240, 231, 140);
   border: none;
-  padding-left: 140px;
+  padding-left: 110px;
   font-size: 40px;
   font-weight: bold;
 }
@@ -109,16 +109,18 @@ The prupose of this class is to style the score button.
 
 Author: Travis Burke Wrote inital class.
 */
-#score-button{
-  display: inline-flex;
-  position: absolute;
-  width: 300px;
+#score-text {
+  display: inline-block;
   background-color: rgb(240, 231, 140);
   border: none;
-  padding-left: 200px;
   font-size: 20px;
   font-weight: bold;
 }
+
+#score-button {
+  display: inline-block
+}
+
 
 /*
 The prupose of this class is to make the play button turn magenta on hover. Change pointer sytle.
@@ -146,18 +148,18 @@ The prupose of this ID is to Style settings for the audio button
 Author: Ethan Cooke. Wrote inital ID.
 */
 #audio-button {
-  display: inline-block;
+  display: none;
   cursor: pointer;
   width: 24%;
 }
 
 /*
-The prupose of this ID is to style settings for the question text img.
+The purpose of this ID is to style settings for the question text img.
 
 Author: Ethan Cooke. Wrote inital ID.
 */
 #wordImg {
-  display: inline-block;
+  display: none;
   width: 150px;
   height: 75px;
 }
@@ -170,6 +172,7 @@ Author: Ethan Cooke. Wrote inital ID.
 #titleRow {
   display: flex;
   height: 75px;
+  justify-content: center;
 }
 
 /*
@@ -218,4 +221,8 @@ Author: Ethan Cooke.Wrote inital ID.
 */
 #oops {
   height: 195px;
+}
+
+#score {
+  display: flex;
 }

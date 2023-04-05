@@ -82,12 +82,9 @@ window.onload = function loadGame() {
         $("#image" + i).show();
     }
 
+    //Fix title row css on reset
+    $("#titleRow").css("justify-content", "center");
     // Score button need to add variables
-    document.getElementById("titleRow").innerHTML =
-        "<div class='play-again'>" +
-        '<button id="score-button" onclick="resetGame()">"Click Your Score: </button>' +
-        "</div>";
-
     loadWord();
 };
 
@@ -318,4 +315,11 @@ function getScoreSuccess(serverScoreData) {
  */
 function getScoreError(err){
     console.log("Could not obtain score date from server")
+}
+
+function displayWord() {
+    $("#audio-button").css("display", "inline-block");
+    $("#wordImg").css("display", "inline-block");
+    $("#score").css("display", "none");
+    $("#titleRow").css("justify-content", "start");
 }
