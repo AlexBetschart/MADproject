@@ -31,6 +31,15 @@ server.use(express.json());
 // enable the Incoming JSON objects tobe of any type.
 server.use(express.urlencoded({ extended: true }));
 
+//fix security policy
+server.use((req, res, next) => {
+    res.setHeader(
+        "Content-Security-Policy",
+        "default-src 'self' http://ugdev.cs.smu.ca:3085"
+    );
+    next();
+});
+
 // Initialize variables.
 let gameScore = 0; //The number of questions the user answered correct.
 let totalRounds = 0; //The total number of questions answered by the user.
