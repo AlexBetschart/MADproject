@@ -48,6 +48,8 @@ const images = [
 let CurrCorrect; // holds the randomly generated value corresponding to the correct image, audio and word.
 let gameScore = 0; //holds the score, initially 0.
 let totalRounds = 0; //holds the total number of rounds
+let dragBtn = document.getElementById("score-button");
+let dragImg = document.getElementById("bearImg");
 
 // define the base URL for the server
 const SERVER_URL = "http://ugdev.cs.smu.ca:3085";
@@ -91,6 +93,9 @@ window.onload = function loadGame() {
     // Score button need to add variables
 
     loadWord();
+
+    //make bear draggable
+    dragImg.draggable = false;
 };
 
 /**
@@ -330,4 +335,13 @@ function displayWord() {
     $("#wordImg").css("display", "inline-block");
     $("#score").css("display", "none");
     $("#titleRow").css("justify-content", "start");
+
+    //Make bear draggable:
+    dragBtn.addEventListener("click", () => {
+        dragImg.draggable = true;
+    });
+
+    BearImg.addEventListener("dragstart", (ev) => {
+        ev.dataTransfer.setData("text", ev.target.id);
+    });
 }

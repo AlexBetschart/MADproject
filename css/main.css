@@ -105,9 +105,9 @@ Author: Ethan Cooke Wrote inital class.
 }
 
 /*
-The prupose of this class is to style the score button.
+The prupose of this class is to style the score text
 
-Author: Travis Burke Wrote inital class.
+Author: Ethan Cooke Wrote inital class.
 */
 #score-text {
   display: inline-block;
@@ -119,6 +119,12 @@ Author: Travis Burke Wrote inital class.
   margin-left: 50px;
 }
 
+/*
+The prupose of this class is to style the score button.
+
+Author: Travis Burke Wrote inital class.
+        Revised by Ethan Cooke
+*/
 #score-button {
   display: inline-block;
   font-size: 45px;
