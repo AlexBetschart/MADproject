@@ -10,7 +10,6 @@
  * are called).
  * 
  * Authors: Rian Amhed (A00437022)
-            Rishi Bhalla 
             Alex Bestchart
             Travis Burke (A00418937)  wrote majority of the server side code.
             Ethan Cooke (A00446392)
