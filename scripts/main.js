@@ -94,8 +94,8 @@ window.onload = function loadGame() {
 
     loadWord();
 
-    //make bear draggable
-    dragImg.draggable = false;
+    //make the bear not movable
+    $("#bearImage").css("pointer-events", "none");
 };
 
 /**
@@ -337,11 +337,6 @@ function displayWord() {
     $("#titleRow").css("justify-content", "start");
 
     //Make bear draggable:
-    dragBtn.addEventListener("click", () => {
-        dragImg.draggable = true;
-    });
 
-    BearImg.addEventListener("dragstart", (ev) => {
-        ev.dataTransfer.setData("text", ev.target.id);
-    });
+    $("#bearImage").css("pointer-events", "drag");
 }
