@@ -115,10 +115,14 @@ Author: Travis Burke Wrote inital class.
   border: none;
   font-size: 20px;
   font-weight: bold;
+  padding-top: 35px;
+  margin-left: 50px;
 }
 
 #score-button {
-  display: inline-block
+  display: inline-block;
+  font-size: 45px;
+  font-weight: bolder;
 }
 
 
