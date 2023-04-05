@@ -52,7 +52,7 @@ let dragBtn = document.getElementById("score-button");
 let dragImg = document.getElementById("bearImg");
 
 // define the base URL for the server
-const SERVER_URL = "http://ugdev.cs.smu.ca:3085";
+const SERVER_URL = "http://ugdev.cs.smu.ca:3764";
 
 /**
  * The purpose of this function is to load all code that needs to be run before

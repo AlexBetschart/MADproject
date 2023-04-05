@@ -23,7 +23,7 @@ const express = require("express");
 const server = express();
 
 // set the port where the server listens for clients.
-const port = 3085;
+const port = 3764;
 
 // enable the server to utilize JSON {name:value} pairs.
 server.use(express.json());
@@ -35,7 +35,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use((req, res, next) => {
     res.setHeader(
         "Content-Security-Policy",
-        "default-src 'self' http://ugdev.cs.smu.ca:3085"
+        "default-src 'self' http://ugdev.cs.smu.ca:3764"
     );
     next();
 });
@@ -82,7 +82,7 @@ server.use(allowCrossDomain);
  * Author: Travis Burke (wrote initial function)
  *
  */
-server.post("http://ugdev.cs.smu.ca:3085", (req, res) => {
+server.post("http://ugdev.cs.smu.ca:3764", (req, res) => {
     gameScore = req.body.gameScore;
     totalRounds = req.body.totalRounds;
 
@@ -102,7 +102,7 @@ server.post("http://ugdev.cs.smu.ca:3085", (req, res) => {
  * Author: Travis Burke (wrote initial function)
  *
  */
-server.get("http://ugdev.cs.smu.ca:3085", (req, res) => {
+server.get("http://ugdev.cs.smu.ca:3764", (req, res) => {
     // send the updated values back to the client.
     return res.status(200).send({
         Score: gameScore,
@@ -117,6 +117,6 @@ server.get("http://ugdev.cs.smu.ca:3085", (req, res) => {
  * Author: Travis Burke (Wrote initial function)
  */
 server.listen(port, () => {
-    console.log("Server is running on ugdev.cs.smu.ca:3085");
-    console.log("Listening on port 3085");
+    console.log("Server is running on ugdev.cs.smu.ca:3764");
+    console.log("Listening on port 3764");
 });
