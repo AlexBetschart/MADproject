@@ -11,7 +11,7 @@
  * 
  * Authors: Rian Amhed (A00437022)
             Rishi Bhalla 
-            Alex Bestchart
+            Alex Bestchart (A00426091)
             Travis Burke (A00418937)  wrote majority of the server side code.
             Ethan Cooke (A00446392)
  */
