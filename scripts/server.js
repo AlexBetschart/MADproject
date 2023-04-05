@@ -11,7 +11,7 @@
  * 
  * Authors: Rian Amhed (A00437022)
             Rishi Bhalla 
-            Alex Bestchart
+            Alex Bestchart (A00426091)
             Travis Burke (A00418937)  wrote majority of the server side code.
             Ethan Cooke (A00446392)
  */
@@ -78,8 +78,8 @@ server.post("/scorePost", (req, res) => {
     totalRounds = req.body.totalRounds;
 
     return res.status(200).send({
-        gameScore: gameScore,
-        totalRounds: totalRounds,
+        Score: gameScore,
+        Rounds: totalRounds,
     });
 });
 
@@ -96,8 +96,8 @@ server.post("/scorePost", (req, res) => {
 server.get("/scoreGet", (req, res) => {
     // send the updated values back to the client.
     return res.status(200).send({
-        gameScore: gameScore,
-        totalRounds: totalRounds,
+        Score: gameScore,
+        Rounds: totalRounds,
     });
 });
 
