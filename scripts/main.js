@@ -110,6 +110,7 @@ function loadWord() {
  *          Ethan Cooke (Created play again button)
  *          Travis Burke (Show success images and bear)
  *          Rian Ahmed (Added a increment for gamescore and total rounds)
+ *          Alex Betschart (Sending scores to server)
  */
 function onSuccess() {
     document.getElementById("titleRow").innerHTML =
@@ -118,9 +119,11 @@ function onSuccess() {
         "</div>";
     gameScore++;
     totalRounds++;
-    //sessionStorage.setItem("Score", gameScore);
 
+    //sessionStorage.setItem("Score", gameScore);
     // remember to put browser to server communication for storing rounds and score.
+    let sendScores = {"score":gameScore, "rounds":totalRounds}
+    $.post(SERVER_URL, sendScores, successFn).fail(errorFn)
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
@@ -139,6 +142,7 @@ function onSuccess() {
  *          Travis Burke (Show success images and bear)
  *          Ethan Cooke (Added play again button)
  *          Rian Ahmed (Added an increment for total rounds)
+ *          Alex Betschart (Send scores to server)
  */
 function onFailure() {
     document.getElementById("titleRow").innerHTML =
@@ -149,6 +153,8 @@ function onFailure() {
     //sessionStorage.setItem("Score", gameScore);
 
     // remember to put browser to server communication for storing rounds and score.
+    let sendScores = {"score":gameScore, "rounds":totalRounds}
+    $.post(SERVER_URL, sendScores, successFn).fail(errorFn)
 
     //make the bear not movable
     $("#bearImage").css("pointer-events", "none");
