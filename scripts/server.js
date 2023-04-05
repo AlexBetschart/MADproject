@@ -77,8 +77,8 @@ server.post("/scorePost", (req, res) => {
     totalRounds = req.body.totalRounds;
 
     return res.status(200).send({
-        gameScore: gameScore,
-        totalRounds: totalRounds,
+        Score: gameScore,
+        Rounds: totalRounds,
     });
 });
 
@@ -95,8 +95,8 @@ server.post("/scorePost", (req, res) => {
 server.get("/scoreGet", (req, res) => {
     // send the updated values back to the client.
     return res.status(200).send({
-        gameScore: gameScore,
-        totalRounds: totalRounds,
+        Score: gameScore,
+        Rounds: totalRounds,
     });
 });
 
