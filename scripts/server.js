@@ -78,8 +78,8 @@ server.post("/scorePost", (req, res) => {
     totalRounds = req.body.totalRounds;
 
     return res.status(200).send({
-        gameScore: gameScore,
-        totalRounds: totalRounds,
+        Score: gameScore,
+        Rounds: totalRounds,
     });
 });
 
