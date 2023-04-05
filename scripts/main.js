@@ -308,7 +308,7 @@ function dragLeave(ev) {
  * Author: Alex Betschart
  */
 function requestScores() {
-    $.get(SERVER_URL + "/scoreGet", sendScores, getScoresSuccess).fail(getScoreErrorFn);
+    $.get(SERVER_URL + "/scoreGet", getScoresSuccess).fail(getScoreErrorFn);
 }
 
 /**
