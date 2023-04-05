@@ -53,31 +53,6 @@ let totalRounds = 0; //holds the total number of rounds
 const SERVER_URL = "http://ugdev.cs.smu.ca:3085";
 
 /**
- * The purpose of this function is to load the images into the grid when the grid is loaded
- *  in the html file. Can be used for dynamically loading images.
- *
- * Authors: Alex Bestchart wrote initial function.
- */
-function loadImages() {
-    for (var i = 0; i < images.length; i++) {
-        if (i < 3) {
-            $("topMid").append(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        } else if (i < 6) {
-            $("midMid").prepend(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        } else if (i < 9) {
-            $("bottomMid").prepend(
-                "<img id='" + i + "' src='" + images[i] + "' />"
-            );
-        }
-        console.log("hello" + i + id);
-    }
-}
-
-/**
  * The purpose of this function is to load all code that needs to be run before
  * the game can be played.
  *
