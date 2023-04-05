@@ -82,7 +82,7 @@ server.use(allowCrossDomain);
  * Author: Travis Burke (wrote initial function)
  *
  */
-server.post("/scorePost", (req, res) => {
+server.post("http://ugdev.cs.smu.ca:3085", (req, res) => {
     gameScore = req.body.gameScore;
     totalRounds = req.body.totalRounds;
 
@@ -102,7 +102,7 @@ server.post("/scorePost", (req, res) => {
  * Author: Travis Burke (wrote initial function)
  *
  */
-server.get("/scoreGet", (req, res) => {
+server.get("http://ugdev.cs.smu.ca:3085", (req, res) => {
     // send the updated values back to the client.
     return res.status(200).send({
         Score: gameScore,

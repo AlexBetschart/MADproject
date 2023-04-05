@@ -132,7 +132,7 @@ function onSuccess() {
     //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
     //If an error occurs, it is logged to the console.
     let sendScores = { gameScore: gameScore, totalRounds: totalRounds };
-    $.post(SERVER_URL + "/scorePost", sendScores, getScoreSuccess).fail(
+    $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
         getScoreError
     );
 
@@ -166,7 +166,7 @@ function onFailure() {
     //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
     //If an error occurs, it is logged to the console.
     let sendScores = { gameScore: gameScore, totalRounds: totalRounds };
-    $.post(SERVER_URL + "/scorePost", sendScores, getScoreSuccess).fail(
+    $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
         getScoreError
     );
 
@@ -313,7 +313,7 @@ function dragLeave(ev) {
  * Author: Alex Betschart
  */
 function requestScores() {
-    $.get(SERVER_URL + "/scoreGet", getScoreSuccess).fail(getScoreError);
+    $.get(SERVER_URL, getScoreSuccess).fail(getScoreError);
 }
 
 /**
