@@ -52,7 +52,7 @@ let dragBtn = document.getElementById("score-button");
 let dragImg = document.getElementById("bearImg");
 
 // define the base URL for the server
-const SERVER_URL = "http://ugdev.cs.smu.ca:3764";
+const SERVER_URL = "http://ugdev.cs.smu.ca:3701";
 
 /**
  * The purpose of this function is to load all code that needs to be run before
@@ -67,11 +67,11 @@ const SERVER_URL = "http://ugdev.cs.smu.ca:3764";
  * Authors: Ethan Cooke (created stub/added loadWord())
  *          Travis Burke (hide and showimages)
  */
-window.onload = function loadGame() {
+window.onload = async function loadGame() {
     CurrCorrect = randomNumber(9);
 
     //Updates score data to make sure it is in sync with the server.
-    requestScores();
+     await requestScores();
 
     //Hide success and oops images on start.
     $("#TopStar").hide();
@@ -120,7 +120,7 @@ function loadWord() {
  *          Rian Ahmed (Added a increment for gamescore and total rounds)
  *          Alex Betschart (Sending scores to server)
  */
-function onSuccess() {
+async function onSuccess() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
         '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
@@ -132,7 +132,7 @@ function onSuccess() {
     //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
     //If an error occurs, it is logged to the console.
     let sendScores = { gameScore: gameScore, totalRounds: totalRounds };
-    $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
+    await $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
         getScoreError
     );
 
@@ -155,7 +155,7 @@ function onSuccess() {
  *          Rian Ahmed (Added an increment for total rounds)
  *          Alex Betschart (Send scores to server)
  */
-function onFailure() {
+async function onFailure() {
     document.getElementById("titleRow").innerHTML =
         "<div class='play-again'>" +
         '<button id="play-button" onclick="resetGame()">si\'owa\'si?</button>' +
@@ -166,7 +166,7 @@ function onFailure() {
     //Sends updated score data to server. Server then updates client score data to make sure they are in sync.
     //If an error occurs, it is logged to the console.
     let sendScores = { gameScore: gameScore, totalRounds: totalRounds };
-    $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
+     await $.post(SERVER_URL, sendScores, getScoreSuccess).fail(
         getScoreError
     );
 
@@ -256,7 +256,7 @@ function allowDrop(ev) {
  * Author: Travis Burke. Wrote initial function. 
  *         Rian Ahmed, made the images dissapear on bear drop.
  */
-function drop(ev) {
+async function drop(ev) {
     //prevent default browser behavior.
     ev.preventDefault();
 
@@ -273,11 +273,11 @@ function drop(ev) {
     //this needs to be changed to display the proper image.
     if ("target" + CurrCorrect.toString() == newLocId) {
         // call success function
-        onSuccess();
+        await onSuccess();
         console.log("kelu'lk tela'tekn (Good Job)");
     } else {
         //call failure function
-        onFailure();
+        await onFailure();
         console.log("tknu'kwalsi ap (Try Again)");
     }
 }
@@ -312,8 +312,8 @@ function dragLeave(ev) {
  * Get the scores from the server as a json. Score : score# , Rounds : # of rounds from the function.
  * Author: Alex Betschart
  */
-function requestScores() {
-    $.get(SERVER_URL, getScoreSuccess).fail(getScoreError);
+async function requestScores() {
+    await $.get(SERVER_URL, getScoreSuccess).fail(getScoreError);
 }
 
 /**
